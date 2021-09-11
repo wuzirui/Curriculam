@@ -38,19 +38,19 @@ namespace Curriculam
             this.txtStudentName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.courseTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridCourse = new System.Windows.Forms.DataGridView();
             this.campusDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.课程号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.课程名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.gridCourse);
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(784, 419);
@@ -106,30 +106,31 @@ namespace Curriculam
             // 
             this.courseTableAdapter1.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // gridCourse
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridCourse.AllowUserToAddRows = false;
+            this.gridCourse.AllowUserToDeleteRows = false;
+            this.gridCourse.AutoGenerateColumns = false;
+            this.gridCourse.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.gridCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.课程号DataGridViewTextBoxColumn,
             this.课程名DataGridViewTextBoxColumn});
-            this.dataGridView1.DataMember = "Course";
-            this.dataGridView1.DataSource = this.campusDataSetBindingSource;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 24);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 10;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(278, 368);
-            this.dataGridView1.TabIndex = 0;
+            this.gridCourse.DataMember = "Course";
+            this.gridCourse.DataSource = this.campusDataSetBindingSource;
+            this.gridCourse.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridCourse.Location = new System.Drawing.Point(16, 24);
+            this.gridCourse.MultiSelect = false;
+            this.gridCourse.Name = "gridCourse";
+            this.gridCourse.ReadOnly = true;
+            this.gridCourse.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridCourse.RowHeadersVisible = false;
+            this.gridCourse.RowHeadersWidth = 10;
+            this.gridCourse.RowTemplate.Height = 27;
+            this.gridCourse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridCourse.Size = new System.Drawing.Size(278, 368);
+            this.gridCourse.TabIndex = 0;
+            this.gridCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCourse_CellContentClick);
             // 
             // campusDataSetBindingSource
             // 
@@ -169,7 +170,7 @@ namespace Curriculam
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,7 +187,7 @@ namespace Curriculam
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.Label label2;
         private campusDataSetTableAdapters.CourseTableAdapter courseTableAdapter1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridCourse;
         private System.Windows.Forms.BindingSource campusDataSetBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn;
