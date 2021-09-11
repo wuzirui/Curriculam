@@ -43,7 +43,8 @@ namespace Curriculam
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-
+            this.courseTableAdapter1.Fill(this.campusDataSet.Course);
+            
         }
     }
 }

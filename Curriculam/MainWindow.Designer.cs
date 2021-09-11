@@ -29,6 +29,7 @@ namespace Curriculam
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.studentTableAdapter = new Curriculam.campusDataSetTableAdapters.StudentTableAdapter();
@@ -36,14 +37,24 @@ namespace Curriculam
             this.label1 = new System.Windows.Forms.Label();
             this.txtStudentName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.courseTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseTableAdapter();
+            this.CourseGrid = new System.Windows.Forms.DataGrid();
+            this.AvailableCourseGrid = new System.Windows.Forms.DataGrid();
+            this.campusDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CourseGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvailableCourseGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.AvailableCourseGrid);
+            this.groupBox1.Controls.Add(this.CourseGrid);
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(784, 428);
+            this.groupBox1.Size = new System.Drawing.Size(784, 419);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "可选开课列表";
@@ -92,6 +103,39 @@ namespace Curriculam
             this.label2.TabIndex = 2;
             this.label2.Text = "学生姓名";
             // 
+            // courseTableAdapter1
+            // 
+            this.courseTableAdapter1.ClearBeforeFill = true;
+            // 
+            // CourseGrid
+            // 
+            this.CourseGrid.CaptionText = "课程列表";
+            this.CourseGrid.DataMember = "";
+            this.CourseGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.CourseGrid.Location = new System.Drawing.Point(15, 24);
+            this.CourseGrid.Name = "CourseGrid";
+            this.CourseGrid.ReadOnly = true;
+            this.CourseGrid.RowHeadersVisible = false;
+            this.CourseGrid.Size = new System.Drawing.Size(281, 375);
+            this.CourseGrid.TabIndex = 0;
+            // 
+            // AvailableCourseGrid
+            // 
+            this.AvailableCourseGrid.CaptionText = "开课列表";
+            this.AvailableCourseGrid.DataMember = "";
+            this.AvailableCourseGrid.DataSource = this.campusDataSetBindingSource;
+            this.AvailableCourseGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.AvailableCourseGrid.Location = new System.Drawing.Point(302, 24);
+            this.AvailableCourseGrid.Name = "AvailableCourseGrid";
+            this.AvailableCourseGrid.ReadOnly = true;
+            this.AvailableCourseGrid.Size = new System.Drawing.Size(464, 375);
+            this.AvailableCourseGrid.TabIndex = 1;
+            // 
+            // campusDataSetBindingSource
+            // 
+            this.campusDataSetBindingSource.DataSource = this.campusDataSet;
+            this.campusDataSetBindingSource.Position = 0;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -105,7 +149,11 @@ namespace Curriculam
             this.Name = "MainWindow";
             this.Text = "Curriculam 选课管理系统";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CourseGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AvailableCourseGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +168,10 @@ namespace Curriculam
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.Label label2;
+        private campusDataSetTableAdapters.CourseTableAdapter courseTableAdapter1;
+        private System.Windows.Forms.DataGrid CourseGrid;
+        private System.Windows.Forms.DataGrid AvailableCourseGrid;
+        private System.Windows.Forms.BindingSource campusDataSetBindingSource;
     }
 }
 
