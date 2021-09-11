@@ -31,33 +31,37 @@ namespace Curriculam
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.campusDataSet = new Curriculam.campusDataSet();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.studentTableAdapter = new Curriculam.campusDataSetTableAdapters.StudentTableAdapter();
-            this.campusDataSet = new Curriculam.campusDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStudentName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.courseTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseTableAdapter();
-            this.CourseGrid = new System.Windows.Forms.DataGrid();
-            this.AvailableCourseGrid = new System.Windows.Forms.DataGrid();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.campusDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.课程号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.课程名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AvailableCourseGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.AvailableCourseGrid);
-            this.groupBox1.Controls.Add(this.CourseGrid);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(784, 419);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "可选开课列表";
+            // 
+            // campusDataSet
+            // 
+            this.campusDataSet.DataSetName = "campusDataSet";
+            this.campusDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtStudentID
             // 
@@ -70,11 +74,6 @@ namespace Curriculam
             // studentTableAdapter
             // 
             this.studentTableAdapter.ClearBeforeFill = true;
-            // 
-            // campusDataSet
-            // 
-            this.campusDataSet.DataSetName = "campusDataSet";
-            this.campusDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -107,34 +106,53 @@ namespace Curriculam
             // 
             this.courseTableAdapter1.ClearBeforeFill = true;
             // 
-            // CourseGrid
+            // dataGridView1
             // 
-            this.CourseGrid.CaptionText = "课程列表";
-            this.CourseGrid.DataMember = "";
-            this.CourseGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-            this.CourseGrid.Location = new System.Drawing.Point(15, 24);
-            this.CourseGrid.Name = "CourseGrid";
-            this.CourseGrid.ReadOnly = true;
-            this.CourseGrid.RowHeadersVisible = false;
-            this.CourseGrid.Size = new System.Drawing.Size(281, 375);
-            this.CourseGrid.TabIndex = 0;
-            // 
-            // AvailableCourseGrid
-            // 
-            this.AvailableCourseGrid.CaptionText = "开课列表";
-            this.AvailableCourseGrid.DataMember = "";
-            this.AvailableCourseGrid.DataSource = this.campusDataSetBindingSource;
-            this.AvailableCourseGrid.HeaderForeColor = System.Drawing.SystemColors.ControlText;
-            this.AvailableCourseGrid.Location = new System.Drawing.Point(302, 24);
-            this.AvailableCourseGrid.Name = "AvailableCourseGrid";
-            this.AvailableCourseGrid.ReadOnly = true;
-            this.AvailableCourseGrid.Size = new System.Drawing.Size(464, 375);
-            this.AvailableCourseGrid.TabIndex = 1;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.课程号DataGridViewTextBoxColumn,
+            this.课程名DataGridViewTextBoxColumn});
+            this.dataGridView1.DataMember = "Course";
+            this.dataGridView1.DataSource = this.campusDataSetBindingSource;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 24);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 10;
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(278, 368);
+            this.dataGridView1.TabIndex = 0;
             // 
             // campusDataSetBindingSource
             // 
             this.campusDataSetBindingSource.DataSource = this.campusDataSet;
             this.campusDataSetBindingSource.Position = 0;
+            // 
+            // 课程号DataGridViewTextBoxColumn
+            // 
+            this.课程号DataGridViewTextBoxColumn.DataPropertyName = "课程号";
+            this.课程号DataGridViewTextBoxColumn.HeaderText = "课程号";
+            this.课程号DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.课程号DataGridViewTextBoxColumn.Name = "课程号DataGridViewTextBoxColumn";
+            this.课程号DataGridViewTextBoxColumn.ReadOnly = true;
+            this.课程号DataGridViewTextBoxColumn.Width = 80;
+            // 
+            // 课程名DataGridViewTextBoxColumn
+            // 
+            this.课程名DataGridViewTextBoxColumn.DataPropertyName = "课程名";
+            this.课程名DataGridViewTextBoxColumn.HeaderText = "课程名";
+            this.课程名DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.课程名DataGridViewTextBoxColumn.Name = "课程名DataGridViewTextBoxColumn";
+            this.课程名DataGridViewTextBoxColumn.ReadOnly = true;
+            this.课程名DataGridViewTextBoxColumn.Width = 125;
             // 
             // MainWindow
             // 
@@ -151,8 +169,7 @@ namespace Curriculam
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AvailableCourseGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,9 +186,10 @@ namespace Curriculam
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.Label label2;
         private campusDataSetTableAdapters.CourseTableAdapter courseTableAdapter1;
-        private System.Windows.Forms.DataGrid CourseGrid;
-        private System.Windows.Forms.DataGrid AvailableCourseGrid;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource campusDataSetBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 课程号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn;
     }
 }
 

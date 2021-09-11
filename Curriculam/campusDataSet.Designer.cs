@@ -38,6 +38,8 @@ namespace Curriculam {
         
         private TimePeriodDataTable tableTimePeriod;
         
+        private AvailableCourseLsitDataTable tableAvailableCourseLsit;
+        
         private global::System.Data.DataRelation relationFK_AVAILABL_COURSEOPE_COURSE;
         
         private global::System.Data.DataRelation relationFK_COURSETA_RELATIONS_AVAILABL;
@@ -98,6 +100,9 @@ namespace Curriculam {
                 }
                 if ((ds.Tables["TimePeriod"] != null)) {
                     base.Tables.Add(new TimePeriodDataTable(ds.Tables["TimePeriod"]));
+                }
+                if ((ds.Tables["AvailableCourseLsit"] != null)) {
+                    base.Tables.Add(new AvailableCourseLsitDataTable(ds.Tables["AvailableCourseLsit"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -189,6 +194,16 @@ namespace Curriculam {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AvailableCourseLsitDataTable AvailableCourseLsit {
+            get {
+                return this.tableAvailableCourseLsit;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -275,6 +290,9 @@ namespace Curriculam {
                 if ((ds.Tables["TimePeriod"] != null)) {
                     base.Tables.Add(new TimePeriodDataTable(ds.Tables["TimePeriod"]));
                 }
+                if ((ds.Tables["AvailableCourseLsit"] != null)) {
+                    base.Tables.Add(new AvailableCourseLsitDataTable(ds.Tables["AvailableCourseLsit"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -350,6 +368,12 @@ namespace Curriculam {
                     this.tableTimePeriod.InitVars();
                 }
             }
+            this.tableAvailableCourseLsit = ((AvailableCourseLsitDataTable)(base.Tables["AvailableCourseLsit"]));
+            if ((initTable == true)) {
+                if ((this.tableAvailableCourseLsit != null)) {
+                    this.tableAvailableCourseLsit.InitVars();
+                }
+            }
             this.relationFK_AVAILABL_COURSEOPE_COURSE = this.Relations["FK_AVAILABL_COURSEOPE_COURSE"];
             this.relationFK_COURSETA_RELATIONS_AVAILABL = this.Relations["FK_COURSETA_RELATIONS_AVAILABL"];
             this.relationFK_COURSETA_RELATIONS_STUDENT = this.Relations["FK_COURSETA_RELATIONS_STUDENT"];
@@ -380,8 +404,10 @@ namespace Curriculam {
             base.Tables.Add(this.tableTeacher);
             this.tableTimePeriod = new TimePeriodDataTable();
             base.Tables.Add(this.tableTimePeriod);
+            this.tableAvailableCourseLsit = new AvailableCourseLsitDataTable();
+            base.Tables.Add(this.tableAvailableCourseLsit);
             this.relationFK_AVAILABL_COURSEOPE_COURSE = new global::System.Data.DataRelation("FK_AVAILABL_COURSEOPE_COURSE", new global::System.Data.DataColumn[] {
-                        this.tableCourse.CourseIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCourse.课程号Column}, new global::System.Data.DataColumn[] {
                         this.tableAvailableCourse.CourseIDColumn}, false);
             this.Relations.Add(this.relationFK_AVAILABL_COURSEOPE_COURSE);
             this.relationFK_COURSETA_RELATIONS_AVAILABL = new global::System.Data.DataRelation("FK_COURSETA_RELATIONS_AVAILABL", new global::System.Data.DataColumn[] {
@@ -402,7 +428,7 @@ namespace Curriculam {
             this.Relations.Add(this.relationFK_RELATION_RELATIONS_TEACHER);
             this.relationFK_TIMEPERI_RELATIONS_AVAILABL = new global::System.Data.DataRelation("FK_TIMEPERI_RELATIONS_AVAILABL", new global::System.Data.DataColumn[] {
                         this.tableAvailableCourse.LectureIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTimePeriod.LectureIDColumn}, false);
+                        this.tableTimePeriod.开课号Column}, false);
             this.Relations.Add(this.relationFK_TIMEPERI_RELATIONS_AVAILABL);
         }
         
@@ -445,6 +471,12 @@ namespace Curriculam {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeTimePeriod() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeAvailableCourseLsit() {
             return false;
         }
         
@@ -523,6 +555,9 @@ namespace Curriculam {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void TimePeriodRowChangeEventHandler(object sender, TimePeriodRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void AvailableCourseLsitRowChangeEventHandler(object sender, AvailableCourseLsitRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -836,9 +871,9 @@ namespace Curriculam {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CourseDataTable : global::System.Data.TypedTableBase<CourseRow> {
             
-            private global::System.Data.DataColumn columnCourseID;
+            private global::System.Data.DataColumn column课程号;
             
-            private global::System.Data.DataColumn columnCourseName;
+            private global::System.Data.DataColumn column课程名;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -875,17 +910,17 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CourseIDColumn {
+            public global::System.Data.DataColumn 课程号Column {
                 get {
-                    return this.columnCourseID;
+                    return this.column课程号;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CourseNameColumn {
+            public global::System.Data.DataColumn 课程名Column {
                 get {
-                    return this.columnCourseName;
+                    return this.column课程名;
                 }
             }
             
@@ -926,11 +961,11 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CourseRow AddCourseRow(int CourseID, string CourseName) {
+            public CourseRow AddCourseRow(int 课程号, string 课程名) {
                 CourseRow rowCourseRow = ((CourseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CourseID,
-                        CourseName};
+                        课程号,
+                        课程名};
                 rowCourseRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCourseRow);
                 return rowCourseRow;
@@ -938,9 +973,9 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CourseRow FindByCourseID(int CourseID) {
+            public CourseRow FindBy课程号(int 课程号) {
                 return ((CourseRow)(this.Rows.Find(new object[] {
-                            CourseID})));
+                            课程号})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -960,22 +995,22 @@ namespace Curriculam {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnCourseID = base.Columns["CourseID"];
-                this.columnCourseName = base.Columns["CourseName"];
+                this.column课程号 = base.Columns["课程号"];
+                this.column课程名 = base.Columns["课程名"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCourseID = new global::System.Data.DataColumn("CourseID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourseID);
-                this.columnCourseName = new global::System.Data.DataColumn("CourseName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourseName);
+                this.column课程号 = new global::System.Data.DataColumn("课程号", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column课程号);
+                this.column课程名 = new global::System.Data.DataColumn("课程名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column课程名);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCourseID}, true));
-                this.columnCourseID.AllowDBNull = false;
-                this.columnCourseID.Unique = true;
-                this.columnCourseName.MaxLength = 2147483647;
+                                this.column课程号}, true));
+                this.column课程号.AllowDBNull = false;
+                this.column课程号.Unique = true;
+                this.column课程名.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2229,21 +2264,19 @@ namespace Curriculam {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TimePeriodDataTable : global::System.Data.TypedTableBase<TimePeriodRow> {
             
-            private global::System.Data.DataColumn columnLectureID;
+            private global::System.Data.DataColumn column开课号;
             
-            private global::System.Data.DataColumn columnPeriodID;
+            private global::System.Data.DataColumn column星期;
             
-            private global::System.Data.DataColumn columnDay;
+            private global::System.Data.DataColumn column上课地点;
             
-            private global::System.Data.DataColumn columnLocation;
+            private global::System.Data.DataColumn column开始周;
             
-            private global::System.Data.DataColumn columnWeekStart;
+            private global::System.Data.DataColumn column结束周;
             
-            private global::System.Data.DataColumn columnWeekEnd;
+            private global::System.Data.DataColumn column开始节;
             
-            private global::System.Data.DataColumn columnSectionStart;
-            
-            private global::System.Data.DataColumn columnSectionEnd;
+            private global::System.Data.DataColumn column结束节;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2280,65 +2313,57 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LectureIDColumn {
+            public global::System.Data.DataColumn 开课号Column {
                 get {
-                    return this.columnLectureID;
+                    return this.column开课号;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PeriodIDColumn {
+            public global::System.Data.DataColumn 星期Column {
                 get {
-                    return this.columnPeriodID;
+                    return this.column星期;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DayColumn {
+            public global::System.Data.DataColumn 上课地点Column {
                 get {
-                    return this.columnDay;
+                    return this.column上课地点;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LocationColumn {
+            public global::System.Data.DataColumn 开始周Column {
                 get {
-                    return this.columnLocation;
+                    return this.column开始周;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn WeekStartColumn {
+            public global::System.Data.DataColumn 结束周Column {
                 get {
-                    return this.columnWeekStart;
+                    return this.column结束周;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn WeekEndColumn {
+            public global::System.Data.DataColumn 开始节Column {
                 get {
-                    return this.columnWeekEnd;
+                    return this.column开始节;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SectionStartColumn {
+            public global::System.Data.DataColumn 结束节Column {
                 get {
-                    return this.columnSectionStart;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SectionEndColumn {
-                get {
-                    return this.columnSectionEnd;
+                    return this.column结束节;
                 }
             }
             
@@ -2379,31 +2404,22 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TimePeriodRow AddTimePeriodRow(AvailableCourseRow parentAvailableCourseRowByFK_TIMEPERI_RELATIONS_AVAILABL, int PeriodID, int Day, string Location, int WeekStart, int WeekEnd, int SectionStart, int SectionEnd) {
+            public TimePeriodRow AddTimePeriodRow(AvailableCourseRow parentAvailableCourseRowByFK_TIMEPERI_RELATIONS_AVAILABL, int 星期, string 上课地点, int 开始周, int 结束周, int 开始节, int 结束节) {
                 TimePeriodRow rowTimePeriodRow = ((TimePeriodRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        PeriodID,
-                        Day,
-                        Location,
-                        WeekStart,
-                        WeekEnd,
-                        SectionStart,
-                        SectionEnd};
+                        星期,
+                        上课地点,
+                        开始周,
+                        结束周,
+                        开始节,
+                        结束节};
                 if ((parentAvailableCourseRowByFK_TIMEPERI_RELATIONS_AVAILABL != null)) {
                     columnValuesArray[0] = parentAvailableCourseRowByFK_TIMEPERI_RELATIONS_AVAILABL[0];
                 }
                 rowTimePeriodRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTimePeriodRow);
                 return rowTimePeriodRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TimePeriodRow FindByLectureIDPeriodID(int LectureID, int PeriodID) {
-                return ((TimePeriodRow)(this.Rows.Find(new object[] {
-                            LectureID,
-                            PeriodID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2423,41 +2439,34 @@ namespace Curriculam {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnLectureID = base.Columns["LectureID"];
-                this.columnPeriodID = base.Columns["PeriodID"];
-                this.columnDay = base.Columns["Day"];
-                this.columnLocation = base.Columns["Location"];
-                this.columnWeekStart = base.Columns["WeekStart"];
-                this.columnWeekEnd = base.Columns["WeekEnd"];
-                this.columnSectionStart = base.Columns["SectionStart"];
-                this.columnSectionEnd = base.Columns["SectionEnd"];
+                this.column开课号 = base.Columns["开课号"];
+                this.column星期 = base.Columns["星期"];
+                this.column上课地点 = base.Columns["上课地点"];
+                this.column开始周 = base.Columns["开始周"];
+                this.column结束周 = base.Columns["结束周"];
+                this.column开始节 = base.Columns["开始节"];
+                this.column结束节 = base.Columns["结束节"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnLectureID = new global::System.Data.DataColumn("LectureID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLectureID);
-                this.columnPeriodID = new global::System.Data.DataColumn("PeriodID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPeriodID);
-                this.columnDay = new global::System.Data.DataColumn("Day", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDay);
-                this.columnLocation = new global::System.Data.DataColumn("Location", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLocation);
-                this.columnWeekStart = new global::System.Data.DataColumn("WeekStart", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWeekStart);
-                this.columnWeekEnd = new global::System.Data.DataColumn("WeekEnd", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWeekEnd);
-                this.columnSectionStart = new global::System.Data.DataColumn("SectionStart", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSectionStart);
-                this.columnSectionEnd = new global::System.Data.DataColumn("SectionEnd", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSectionEnd);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnLectureID,
-                                this.columnPeriodID}, true));
-                this.columnLectureID.AllowDBNull = false;
-                this.columnPeriodID.AllowDBNull = false;
-                this.columnLocation.MaxLength = 2147483647;
+                this.column开课号 = new global::System.Data.DataColumn("开课号", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column开课号);
+                this.column星期 = new global::System.Data.DataColumn("星期", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column星期);
+                this.column上课地点 = new global::System.Data.DataColumn("上课地点", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column上课地点);
+                this.column开始周 = new global::System.Data.DataColumn("开始周", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column开始周);
+                this.column结束周 = new global::System.Data.DataColumn("结束周", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column结束周);
+                this.column开始节 = new global::System.Data.DataColumn("开始节", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column开始节);
+                this.column结束节 = new global::System.Data.DataColumn("结束节", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column结束节);
+                this.column开课号.AllowDBNull = false;
+                this.column上课地点.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2544,6 +2553,294 @@ namespace Curriculam {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "TimePeriodDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AvailableCourseLsitDataTable : global::System.Data.TypedTableBase<AvailableCourseLsitRow> {
+            
+            private global::System.Data.DataColumn column开课编号;
+            
+            private global::System.Data.DataColumn column课程名;
+            
+            private global::System.Data.DataColumn column主讲教师;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitDataTable() {
+                this.TableName = "AvailableCourseLsit";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AvailableCourseLsitDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected AvailableCourseLsitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 开课编号Column {
+                get {
+                    return this.column开课编号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 课程名Column {
+                get {
+                    return this.column课程名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 主讲教师Column {
+                get {
+                    return this.column主讲教师;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitRow this[int index] {
+                get {
+                    return ((AvailableCourseLsitRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddAvailableCourseLsitRow(AvailableCourseLsitRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitRow AddAvailableCourseLsitRow(int 开课编号, string 课程名, string 主讲教师) {
+                AvailableCourseLsitRow rowAvailableCourseLsitRow = ((AvailableCourseLsitRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        开课编号,
+                        课程名,
+                        主讲教师};
+                rowAvailableCourseLsitRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAvailableCourseLsitRow);
+                return rowAvailableCourseLsitRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitRow FindBy开课编号(int 开课编号) {
+                return ((AvailableCourseLsitRow)(this.Rows.Find(new object[] {
+                            开课编号})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AvailableCourseLsitDataTable cln = ((AvailableCourseLsitDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AvailableCourseLsitDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.column开课编号 = base.Columns["开课编号"];
+                this.column课程名 = base.Columns["课程名"];
+                this.column主讲教师 = base.Columns["主讲教师"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.column开课编号 = new global::System.Data.DataColumn("开课编号", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column开课编号);
+                this.column课程名 = new global::System.Data.DataColumn("课程名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column课程名);
+                this.column主讲教师 = new global::System.Data.DataColumn("主讲教师", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column主讲教师);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.column开课编号}, true));
+                this.column开课编号.AllowDBNull = false;
+                this.column开课编号.Unique = true;
+                this.column课程名.MaxLength = 2147483647;
+                this.column主讲教师.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitRow NewAvailableCourseLsitRow() {
+                return ((AvailableCourseLsitRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AvailableCourseLsitRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AvailableCourseLsitRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AvailableCourseLsitRowChanged != null)) {
+                    this.AvailableCourseLsitRowChanged(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AvailableCourseLsitRowChanging != null)) {
+                    this.AvailableCourseLsitRowChanging(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AvailableCourseLsitRowDeleted != null)) {
+                    this.AvailableCourseLsitRowDeleted(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AvailableCourseLsitRowDeleting != null)) {
+                    this.AvailableCourseLsitRowDeleting(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveAvailableCourseLsitRow(AvailableCourseLsitRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                campusDataSet ds = new campusDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AvailableCourseLsitDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2737,41 +3034,41 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CourseID {
+            public int 课程号 {
                 get {
-                    return ((int)(this[this.tableCourse.CourseIDColumn]));
+                    return ((int)(this[this.tableCourse.课程号Column]));
                 }
                 set {
-                    this[this.tableCourse.CourseIDColumn] = value;
+                    this[this.tableCourse.课程号Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CourseName {
+            public string 课程名 {
                 get {
                     try {
-                        return ((string)(this[this.tableCourse.CourseNameColumn]));
+                        return ((string)(this[this.tableCourse.课程名Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“Course”中列“CourseName”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“Course”中列“课程名”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableCourse.CourseNameColumn] = value;
+                    this[this.tableCourse.课程名Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCourseNameNull() {
-                return this.IsNull(this.tableCourse.CourseNameColumn);
+            public bool Is课程名Null() {
+                return this.IsNull(this.tableCourse.课程名Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCourseNameNull() {
-                this[this.tableCourse.CourseNameColumn] = global::System.Convert.DBNull;
+            public void Set课程名Null() {
+                this[this.tableCourse.课程名Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3078,119 +3375,108 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int LectureID {
+            public int 开课号 {
                 get {
-                    return ((int)(this[this.tableTimePeriod.LectureIDColumn]));
+                    return ((int)(this[this.tableTimePeriod.开课号Column]));
                 }
                 set {
-                    this[this.tableTimePeriod.LectureIDColumn] = value;
+                    this[this.tableTimePeriod.开课号Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PeriodID {
-                get {
-                    return ((int)(this[this.tableTimePeriod.PeriodIDColumn]));
-                }
-                set {
-                    this[this.tableTimePeriod.PeriodIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Day {
+            public int 星期 {
                 get {
                     try {
-                        return ((int)(this[this.tableTimePeriod.DayColumn]));
+                        return ((int)(this[this.tableTimePeriod.星期Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“Day”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“星期”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableTimePeriod.DayColumn] = value;
+                    this[this.tableTimePeriod.星期Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Location {
+            public string 上课地点 {
                 get {
                     try {
-                        return ((string)(this[this.tableTimePeriod.LocationColumn]));
+                        return ((string)(this[this.tableTimePeriod.上课地点Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“Location”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“上课地点”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableTimePeriod.LocationColumn] = value;
+                    this[this.tableTimePeriod.上课地点Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int WeekStart {
+            public int 开始周 {
                 get {
                     try {
-                        return ((int)(this[this.tableTimePeriod.WeekStartColumn]));
+                        return ((int)(this[this.tableTimePeriod.开始周Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“WeekStart”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“开始周”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableTimePeriod.WeekStartColumn] = value;
+                    this[this.tableTimePeriod.开始周Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int WeekEnd {
+            public int 结束周 {
                 get {
                     try {
-                        return ((int)(this[this.tableTimePeriod.WeekEndColumn]));
+                        return ((int)(this[this.tableTimePeriod.结束周Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“WeekEnd”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“结束周”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableTimePeriod.WeekEndColumn] = value;
+                    this[this.tableTimePeriod.结束周Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SectionStart {
+            public int 开始节 {
                 get {
                     try {
-                        return ((int)(this[this.tableTimePeriod.SectionStartColumn]));
+                        return ((int)(this[this.tableTimePeriod.开始节Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“SectionStart”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“开始节”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableTimePeriod.SectionStartColumn] = value;
+                    this[this.tableTimePeriod.开始节Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SectionEnd {
+            public int 结束节 {
                 get {
                     try {
-                        return ((int)(this[this.tableTimePeriod.SectionEndColumn]));
+                        return ((int)(this[this.tableTimePeriod.结束节Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“SectionEnd”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“TimePeriod”中列“结束节”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableTimePeriod.SectionEndColumn] = value;
+                    this[this.tableTimePeriod.结束节Column] = value;
                 }
             }
             
@@ -3207,74 +3493,156 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDayNull() {
-                return this.IsNull(this.tableTimePeriod.DayColumn);
+            public bool Is星期Null() {
+                return this.IsNull(this.tableTimePeriod.星期Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDayNull() {
-                this[this.tableTimePeriod.DayColumn] = global::System.Convert.DBNull;
+            public void Set星期Null() {
+                this[this.tableTimePeriod.星期Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsLocationNull() {
-                return this.IsNull(this.tableTimePeriod.LocationColumn);
+            public bool Is上课地点Null() {
+                return this.IsNull(this.tableTimePeriod.上课地点Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetLocationNull() {
-                this[this.tableTimePeriod.LocationColumn] = global::System.Convert.DBNull;
+            public void Set上课地点Null() {
+                this[this.tableTimePeriod.上课地点Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsWeekStartNull() {
-                return this.IsNull(this.tableTimePeriod.WeekStartColumn);
+            public bool Is开始周Null() {
+                return this.IsNull(this.tableTimePeriod.开始周Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetWeekStartNull() {
-                this[this.tableTimePeriod.WeekStartColumn] = global::System.Convert.DBNull;
+            public void Set开始周Null() {
+                this[this.tableTimePeriod.开始周Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsWeekEndNull() {
-                return this.IsNull(this.tableTimePeriod.WeekEndColumn);
+            public bool Is结束周Null() {
+                return this.IsNull(this.tableTimePeriod.结束周Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetWeekEndNull() {
-                this[this.tableTimePeriod.WeekEndColumn] = global::System.Convert.DBNull;
+            public void Set结束周Null() {
+                this[this.tableTimePeriod.结束周Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSectionStartNull() {
-                return this.IsNull(this.tableTimePeriod.SectionStartColumn);
+            public bool Is开始节Null() {
+                return this.IsNull(this.tableTimePeriod.开始节Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSectionStartNull() {
-                this[this.tableTimePeriod.SectionStartColumn] = global::System.Convert.DBNull;
+            public void Set开始节Null() {
+                this[this.tableTimePeriod.开始节Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSectionEndNull() {
-                return this.IsNull(this.tableTimePeriod.SectionEndColumn);
+            public bool Is结束节Null() {
+                return this.IsNull(this.tableTimePeriod.结束节Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSectionEndNull() {
-                this[this.tableTimePeriod.SectionEndColumn] = global::System.Convert.DBNull;
+            public void Set结束节Null() {
+                this[this.tableTimePeriod.结束节Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AvailableCourseLsitRow : global::System.Data.DataRow {
+            
+            private AvailableCourseLsitDataTable tableAvailableCourseLsit;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AvailableCourseLsitRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAvailableCourseLsit = ((AvailableCourseLsitDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 开课编号 {
+                get {
+                    return ((int)(this[this.tableAvailableCourseLsit.开课编号Column]));
+                }
+                set {
+                    this[this.tableAvailableCourseLsit.开课编号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 课程名 {
+                get {
+                    try {
+                        return ((string)(this[this.tableAvailableCourseLsit.课程名Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“AvailableCourseLsit”中列“课程名”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableAvailableCourseLsit.课程名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 主讲教师 {
+                get {
+                    try {
+                        return ((string)(this[this.tableAvailableCourseLsit.主讲教师Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“AvailableCourseLsit”中列“主讲教师”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableAvailableCourseLsit.主讲教师Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is课程名Null() {
+                return this.IsNull(this.tableAvailableCourseLsit.课程名Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set课程名Null() {
+                this[this.tableAvailableCourseLsit.课程名Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is主讲教师Null() {
+                return this.IsNull(this.tableAvailableCourseLsit.主讲教师Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set主讲教师Null() {
+                this[this.tableAvailableCourseLsit.主讲教师Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -3502,6 +3870,40 @@ namespace Curriculam {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TimePeriodRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class AvailableCourseLsitRowChangeEvent : global::System.EventArgs {
+            
+            private AvailableCourseLsitRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitRowChangeEvent(AvailableCourseLsitRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AvailableCourseLsitRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3992,8 +4394,8 @@ SELECT LectureID, CourseID, Location, Credit FROM AvailableCourse WHERE (Lecture
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Course";
-            tableMapping.ColumnMappings.Add("CourseID", "CourseID");
-            tableMapping.ColumnMappings.Add("CourseName", "CourseName");
+            tableMapping.ColumnMappings.Add("CourseID", "课程号");
+            tableMapping.ColumnMappings.Add("CourseName", "课程名");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -4165,14 +4567,6 @@ SELECT LectureID, CourseID, Location, Credit FROM AvailableCourse WHERE (Lecture
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string CourseName, int Original_CourseID) {
-            return this.Update(Original_CourseID, CourseName, Original_CourseID);
         }
     }
     
@@ -5578,69 +5972,14 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "TimePeriod";
-            tableMapping.ColumnMappings.Add("LectureID", "LectureID");
-            tableMapping.ColumnMappings.Add("PeriodID", "PeriodID");
-            tableMapping.ColumnMappings.Add("Day", "Day");
-            tableMapping.ColumnMappings.Add("Location", "Location");
-            tableMapping.ColumnMappings.Add("WeekStart", "WeekStart");
-            tableMapping.ColumnMappings.Add("WeekEnd", "WeekEnd");
-            tableMapping.ColumnMappings.Add("SectionStart", "SectionStart");
-            tableMapping.ColumnMappings.Add("SectionEnd", "SectionEnd");
+            tableMapping.ColumnMappings.Add("LectureID", "开课号");
+            tableMapping.ColumnMappings.Add("Day", "星期");
+            tableMapping.ColumnMappings.Add("Location", "上课地点");
+            tableMapping.ColumnMappings.Add("WeekStart", "开始周");
+            tableMapping.ColumnMappings.Add("WeekEnd", "结束周");
+            tableMapping.ColumnMappings.Add("SectionStart", "开始节");
+            tableMapping.ColumnMappings.Add("SectionEnd", "结束节");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TimePeriod] WHERE (([LectureID] = @Original_LectureID) AND ([PeriodID] = @Original_PeriodID) AND ((@IsNull_Day = 1 AND [Day] IS NULL) OR ([Day] = @Original_Day)) AND ((@IsNull_WeekStart = 1 AND [WeekStart] IS NULL) OR ([WeekStart] = @Original_WeekStart)) AND ((@IsNull_WeekEnd = 1 AND [WeekEnd] IS NULL) OR ([WeekEnd] = @Original_WeekEnd)) AND ((@IsNull_SectionStart = 1 AND [SectionStart] IS NULL) OR ([SectionStart] = @Original_SectionStart)) AND ((@IsNull_SectionEnd = 1 AND [SectionEnd] IS NULL) OR ([SectionEnd] = @Original_SectionEnd)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LectureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PeriodID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WeekStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekStart", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WeekStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekStart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WeekEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekEnd", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WeekEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekEnd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SectionStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionStart", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SectionStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionStart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SectionEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionEnd", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SectionEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionEnd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TimePeriod] ([LectureID], [PeriodID], [Day], [Location], [WeekStart], [WeekEnd], [SectionStart], [SectionEnd]) VALUES (@LectureID, @PeriodID, @Day, @Location, @WeekStart, @WeekEnd, @SectionStart, @SectionEnd);
-SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, SectionEnd FROM TimePeriod WHERE (LectureID = @LectureID) AND (PeriodID = @PeriodID)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LectureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WeekStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekStart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WeekEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekEnd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SectionStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionStart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SectionEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionEnd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TimePeriod] SET [LectureID] = @LectureID, [PeriodID] = @PeriodID, [Day] = @Day, [Location] = @Location, [WeekStart] = @WeekStart, [WeekEnd] = @WeekEnd, [SectionStart] = @SectionStart, [SectionEnd] = @SectionEnd WHERE (([LectureID] = @Original_LectureID) AND ([PeriodID] = @Original_PeriodID) AND ((@IsNull_Day = 1 AND [Day] IS NULL) OR ([Day] = @Original_Day)) AND ((@IsNull_WeekStart = 1 AND [WeekStart] IS NULL) OR ([WeekStart] = @Original_WeekStart)) AND ((@IsNull_WeekEnd = 1 AND [WeekEnd] IS NULL) OR ([WeekEnd] = @Original_WeekEnd)) AND ((@IsNull_SectionStart = 1 AND [SectionStart] IS NULL) OR ([SectionStart] = @Original_SectionStart)) AND ((@IsNull_SectionEnd = 1 AND [SectionEnd] IS NULL) OR ([SectionEnd] = @Original_SectionEnd)));
-SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, SectionEnd FROM TimePeriod WHERE (LectureID = @LectureID) AND (PeriodID = @PeriodID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LectureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PeriodID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WeekStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekStart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WeekEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekEnd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SectionStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionStart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SectionEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionEnd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LectureID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PeriodID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PeriodID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Day", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WeekStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekStart", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WeekStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekStart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_WeekEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekEnd", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WeekEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WeekEnd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SectionStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionStart", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SectionStart", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionStart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SectionEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionEnd", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SectionEnd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SectionEnd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5653,12 +5992,18 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sect" +
-                "ionEnd FROM dbo.TimePeriod";
+            this._commandCollection[0].CommandText = "SELECT LectureID, Day, Location, WeekStart, WeekEnd, SectionStart, SectionEnd FRO" +
+                "M dbo.TimePeriod";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Day, LectureID, Location, SectionEnd, SectionStart, WeekEnd, WeekStart FRO" +
+                "M TimePeriod WHERE (LectureID = @ID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5688,261 +6033,200 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(campusDataSet.TimePeriodDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(campusDataSet.TimePeriodDataTable dataTable, int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(campusDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "TimePeriod");
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual campusDataSet.TimePeriodDataTable GetDataBy(int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            campusDataSet.TimePeriodDataTable dataTable = new campusDataSet.TimePeriodDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AvailableCourseLsitTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public AvailableCourseLsitTableAdapter() {
+            this.ClearBeforeFill = true;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_LectureID, int Original_PeriodID, global::System.Nullable<int> Original_Day, global::System.Nullable<int> Original_WeekStart, global::System.Nullable<int> Original_WeekEnd, global::System.Nullable<int> Original_SectionStart, global::System.Nullable<int> Original_SectionEnd) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_LectureID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_PeriodID));
-            if ((Original_Day.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Day.Value));
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Original_WeekStart.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_WeekStart.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_WeekEnd.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_WeekEnd.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SectionStart.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_SectionStart.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SectionEnd.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_SectionEnd.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int LectureID, int PeriodID, global::System.Nullable<int> Day, string Location, global::System.Nullable<int> WeekStart, global::System.Nullable<int> WeekEnd, global::System.Nullable<int> SectionStart, global::System.Nullable<int> SectionEnd) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(LectureID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PeriodID));
-            if ((Day.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Day.Value));
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Location == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Location));
-            }
-            if ((WeekStart.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(WeekStart.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((WeekEnd.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(WeekEnd.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((SectionStart.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(SectionStart.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((SectionEnd.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(SectionEnd.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int LectureID, int PeriodID, global::System.Nullable<int> Day, string Location, global::System.Nullable<int> WeekStart, global::System.Nullable<int> WeekEnd, global::System.Nullable<int> SectionStart, global::System.Nullable<int> SectionEnd, int Original_LectureID, int Original_PeriodID, global::System.Nullable<int> Original_Day, global::System.Nullable<int> Original_WeekStart, global::System.Nullable<int> Original_WeekEnd, global::System.Nullable<int> Original_SectionStart, global::System.Nullable<int> Original_SectionEnd) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(LectureID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PeriodID));
-            if ((Day.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Day.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Location == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Location));
-            }
-            if ((WeekStart.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(WeekStart.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((WeekEnd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(WeekEnd.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((SectionStart.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(SectionStart.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((SectionEnd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(SectionEnd.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_LectureID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_PeriodID));
-            if ((Original_Day.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Day.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_WeekStart.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_WeekStart.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_WeekEnd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_WeekEnd.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SectionStart.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_SectionStart.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SectionEnd.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_SectionEnd.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
                 }
+                return this._commandCollection;
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AvailableCourseLsit";
+            tableMapping.ColumnMappings.Add("开课编号", "开课编号");
+            tableMapping.ColumnMappings.Add("课程名", "课程名");
+            tableMapping.ColumnMappings.Add("主讲教师", "主讲教师");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Curriculam.Properties.Settings.Default.campusConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT  AvailableCourse.LectureID AS 开课编号, Course.CourseName AS 课程名, Teacher.TeacherName AS 主讲教师
+FROM      AvailableCourse INNER JOIN
+                   Course ON AvailableCourse.CourseID = Course.CourseID INNER JOIN
+                   DeliverLecture ON AvailableCourse.LectureID = DeliverLecture.LectureID INNER JOIN
+                   Teacher ON DeliverLecture.StaffID = Teacher.StaffID";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Day, string Location, global::System.Nullable<int> WeekStart, global::System.Nullable<int> WeekEnd, global::System.Nullable<int> SectionStart, global::System.Nullable<int> SectionEnd, int Original_LectureID, int Original_PeriodID, global::System.Nullable<int> Original_Day, global::System.Nullable<int> Original_WeekStart, global::System.Nullable<int> Original_WeekEnd, global::System.Nullable<int> Original_SectionStart, global::System.Nullable<int> Original_SectionEnd) {
-            return this.Update(Original_LectureID, Original_PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, SectionEnd, Original_LectureID, Original_PeriodID, Original_Day, Original_WeekStart, Original_WeekEnd, Original_SectionStart, Original_SectionEnd);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(campusDataSet.AvailableCourseLsitDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual campusDataSet.AvailableCourseLsitDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            campusDataSet.AvailableCourseLsitDataTable dataTable = new campusDataSet.AvailableCourseLsitDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
@@ -5969,8 +6253,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
         private StudentTableAdapter _studentTableAdapter;
         
         private TeacherTableAdapter _teacherTableAdapter;
-        
-        private TimePeriodTableAdapter _timePeriodTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -6073,20 +6355,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public TimePeriodTableAdapter TimePeriodTableAdapter {
-            get {
-                return this._timePeriodTableAdapter;
-            }
-            set {
-                this._timePeriodTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -6128,10 +6396,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                             && (this._teacherTableAdapter.Connection != null))) {
                     return this._teacherTableAdapter.Connection;
                 }
-                if (((this._timePeriodTableAdapter != null) 
-                            && (this._timePeriodTableAdapter.Connection != null))) {
-                    return this._timePeriodTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -6161,9 +6425,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                     count = (count + 1);
                 }
                 if ((this._teacherTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._timePeriodTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -6231,15 +6492,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._timePeriodTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TimePeriod.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._timePeriodTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -6298,14 +6550,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._timePeriodTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TimePeriod.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._timePeriodTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -6316,14 +6560,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(campusDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._timePeriodTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TimePeriod.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._timePeriodTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._deliverLectureTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.DeliverLecture.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -6435,10 +6671,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                         && (this.MatchTableAdapterConnection(this._teacherTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._timePeriodTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._timePeriodTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager 不包含任何连接信息。请将每个 TableAdapterManager TableAdapter 属性设置为有效的 Tabl" +
@@ -6524,15 +6756,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                         adaptersWithAcceptChangesDuringUpdate.Add(this._teacherTableAdapter.Adapter);
                     }
                 }
-                if ((this._timePeriodTableAdapter != null)) {
-                    revertConnections.Add(this._timePeriodTableAdapter, this._timePeriodTableAdapter.Connection);
-                    this._timePeriodTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._timePeriodTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._timePeriodTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._timePeriodTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._timePeriodTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -6614,10 +6837,6 @@ SELECT LectureID, PeriodID, Day, Location, WeekStart, WeekEnd, SectionStart, Sec
                 if ((this._teacherTableAdapter != null)) {
                     this._teacherTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._teacherTableAdapter]));
                     this._teacherTableAdapter.Transaction = null;
-                }
-                if ((this._timePeriodTableAdapter != null)) {
-                    this._timePeriodTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._timePeriodTableAdapter]));
-                    this._timePeriodTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
