@@ -30,7 +30,17 @@ namespace Curriculam
             hasChosenStudent = isValid;
             chosenSID = sid;
             grpSelect.Enabled = grpStatistic.Enabled = isValid;
+            txtStudentID.Enabled = !isValid;
+            if (isValid)
+            {
+                studentInit(sid);
+            }
         }
+        private void studentInit(int sid)
+        {
+            refreshSelectedCourse();
+        }
+
 
         private void studentIDTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -58,7 +68,7 @@ namespace Curriculam
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            this.courseTableAdapter1.Fill(this.campusDataSet1.Course);
+            this.courseTableAdapter1.Fill(this.campusDataSet.Course);
             courseUnselected();
             courseListUnselected();
         }
@@ -67,14 +77,14 @@ namespace Curriculam
         {
             hasChosenCourse = true;
             chosenCID = cid;
-            this.courseListTableAdapter1.FillBy(this.campusDataSet1.CourseList, chosenCID);
+            this.courseListTableAdapter1.FillBy(this.campusDataSet.CourseList, chosenCID);
             courseListUnselected();
         }
 
         private void courseUnselected()
         {
             hasChosenCourse = false;
-            this.courseListTableAdapter1.Fill(this.campusDataSet1.CourseList);
+            this.courseListTableAdapter1.Fill(this.campusDataSet.CourseList);
             this.gridCourse.ClearSelection();
             courseListUnselected();
         }
@@ -115,7 +125,7 @@ namespace Curriculam
         private void courseListUnselected()
         {
             hasChosenCourseList = false;
-            this.timePeriodTableAdapter1.FillBy(this.campusDataSet1.TimePeriod, 0);
+            this.timePeriodTableAdapter1.FillBy(this.campusDataSet.TimePeriod, 0);
             this.gridCourseList.ClearSelection();
         }
 
@@ -123,7 +133,41 @@ namespace Curriculam
         {
             hasChosenCourseList = true;
             chosenCLID = clid;
-            this.timePeriodTableAdapter1.FillBy(this.campusDataSet1.TimePeriod, chosenCLID);
+            this.timePeriodTableAdapter1.FillBy(this.campusDataSet.TimePeriod, chosenCLID);
+        }
+
+        private void btnDeleteCourseSelect_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAddCourseSelect_Click(object sender, EventArgs e)
+        {
+            if (gridAvailableCourseList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("当前未选择课程", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            for (int i = 0; i < gridAvailableCourseList.SelectedRows.Count; i++)
+            {
+                DataGridViewRow row = gridAvailableCourseList.SelectedRows[i];
+                int lid = int.Parse(row.Cells[0].Value.ToString());
+                
+                var rrow = campusDataSet.StudentAvailableCourseList.FindByLectureID(lid);
+                //campusDataSet.StudentSelectedCourseList.AddStudentSelectedCourseListRow(rrow.LectureID, rrow.CourseName, 
+                    //rrow.Credit, rrow.TeacherName, campusDataSet.Course.FindBy课程号());
+                rrow.Delete();
+            }
+        }
+
+        private void refreshSelectedCourse()
+        {
+            int sid = chosenSID;
+            this.studentAvailableCourseListTableAdapter1.FillAvailable(
+                this.campusDataSet.StudentAvailableCourseList, sid);
+            this.studentSelectedCourseListTableAdapter1.FillSelected(
+                this.campusDataSet.StudentSelectedCourseList, sid);
         }
     }
 }

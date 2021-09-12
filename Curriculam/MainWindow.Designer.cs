@@ -29,26 +29,24 @@ namespace Curriculam
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtStudentID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStudentName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.campusDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.campusDataSet1 = new Curriculam.campusDataSet();
-            this.courseTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseTableAdapter();
-            this.courseListTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseListTableAdapter();
-            this.studentTableAdapter1 = new Curriculam.campusDataSetTableAdapters.StudentTableAdapter();
-            this.timePeriodTableAdapter1 = new Curriculam.campusDataSetTableAdapters.TimePeriodTableAdapter();
             this.grpStatistic = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_CanSubmit = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,31 +65,44 @@ namespace Curriculam
             this.结束节DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.开课号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridCourse = new System.Windows.Forms.DataGridView();
+            this.grpSelect = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnSubmitCourseSelect = new System.Windows.Forms.Button();
+            this.btnClearCourseSelect = new System.Windows.Forms.Button();
+            this.btnDeleteCourseSelect = new System.Windows.Forms.Button();
+            this.btnAddCourseSelect = new System.Windows.Forms.Button();
+            this.gridSelected = new System.Windows.Forms.DataGridView();
+            this.gridAvailableCourseList = new System.Windows.Forms.DataGridView();
+            this.timePeriodTableAdapter1 = new Curriculam.campusDataSetTableAdapters.TimePeriodTableAdapter();
+            this.studentAvailableCourseListTableAdapter1 = new Curriculam.campusDataSetTableAdapters.StudentAvailableCourseListTableAdapter();
+            this.studentTableAdapter1 = new Curriculam.campusDataSetTableAdapters.StudentTableAdapter();
+            this.courseListTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseListTableAdapter();
+            this.studentSelectedCourseListTableAdapter1 = new Curriculam.campusDataSetTableAdapters.StudentSelectedCourseListTableAdapter();
+            this.courseTableAdapter1 = new Curriculam.campusDataSetTableAdapters.CourseTableAdapter();
+            this.campusDataSet = new Curriculam.campusDataSet();
             this.课程号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.课程名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学分DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpSelect = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnAddCourseSelect = new System.Windows.Forms.Button();
-            this.btnDeleteCourseSelect = new System.Windows.Forms.Button();
-            this.btnClearCourseSelect = new System.Windows.Forms.Button();
-            this.btnSubmitCourseSelect = new System.Windows.Forms.Button();
-            this.label_CanSubmit = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet1)).BeginInit();
+            this.lectureIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpStatistic.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCourseList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLecture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCourse)).BeginInit();
             this.grpSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSelected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAvailableCourseList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtStudentID
@@ -129,32 +140,6 @@ namespace Curriculam
             this.label2.TabIndex = 2;
             this.label2.Text = "学生姓名";
             // 
-            // campusDataSet1BindingSource
-            // 
-            this.campusDataSet1BindingSource.DataSource = this.campusDataSet1;
-            this.campusDataSet1BindingSource.Position = 0;
-            // 
-            // campusDataSet1
-            // 
-            this.campusDataSet1.DataSetName = "campusDataSet";
-            this.campusDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // courseTableAdapter1
-            // 
-            this.courseTableAdapter1.ClearBeforeFill = true;
-            // 
-            // courseListTableAdapter1
-            // 
-            this.courseListTableAdapter1.ClearBeforeFill = true;
-            // 
-            // studentTableAdapter1
-            // 
-            this.studentTableAdapter1.ClearBeforeFill = true;
-            // 
-            // timePeriodTableAdapter1
-            // 
-            this.timePeriodTableAdapter1.ClearBeforeFill = true;
-            // 
             // grpStatistic
             // 
             this.grpStatistic.Controls.Add(this.label_CanSubmit);
@@ -178,32 +163,24 @@ namespace Curriculam
             this.grpStatistic.TabStop = false;
             this.grpStatistic.Text = "已选课程统计信息";
             // 
-            // label6
+            // label_CanSubmit
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "要求最小学分";
+            this.label_CanSubmit.AutoSize = true;
+            this.label_CanSubmit.ForeColor = System.Drawing.Color.Maroon;
+            this.label_CanSubmit.Location = new System.Drawing.Point(69, 337);
+            this.label_CanSubmit.Name = "label_CanSubmit";
+            this.label_CanSubmit.Size = new System.Drawing.Size(142, 15);
+            this.label_CanSubmit.TabIndex = 4;
+            this.label_CanSubmit.Text = "当前不符合选课要求";
             // 
-            // label7
+            // label17
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(196, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "8";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(57, 103);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 15);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "要求最大学分";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(196, 253);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(15, 15);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "0";
             // 
             // label9
             // 
@@ -214,23 +191,32 @@ namespace Curriculam
             this.label9.TabIndex = 3;
             this.label9.Text = "12";
             // 
-            // label10
+            // label16
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(57, 141);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 15);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "要求最小课程数";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(57, 253);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 15);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "已选学分";
             // 
-            // label11
+            // label8
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(196, 141);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 15);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "3";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(57, 103);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 15);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "要求最大学分";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(196, 184);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(15, 15);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "5";
             // 
             // label12
             // 
@@ -241,14 +227,59 @@ namespace Curriculam
             this.label12.TabIndex = 0;
             this.label12.Text = "要求最大课程数";
             // 
-            // label13
+            // label15
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(196, 184);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 15);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "5";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(196, 291);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(15, 15);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(196, 141);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(15, 15);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "3";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(57, 291);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "已选课程数";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(57, 141);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(112, 15);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "要求最小课程数";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(196, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 15);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "8";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(57, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "要求最小学分";
             // 
             // groupBox2
             // 
@@ -305,7 +336,7 @@ namespace Curriculam
             this.teacherNameDataGridViewTextBoxColumn,
             this.courseIDDataGridViewTextBoxColumn});
             this.gridCourseList.DataMember = "CourseList";
-            this.gridCourseList.DataSource = this.campusDataSet1BindingSource;
+            this.gridCourseList.DataSource = this.campusDataSet;
             this.gridCourseList.Location = new System.Drawing.Point(303, 42);
             this.gridCourseList.MultiSelect = false;
             this.gridCourseList.Name = "gridCourseList";
@@ -370,7 +401,7 @@ namespace Curriculam
             this.结束节DataGridViewTextBoxColumn,
             this.开课号DataGridViewTextBoxColumn});
             this.gridLecture.DataMember = "TimePeriod";
-            this.gridLecture.DataSource = this.campusDataSet1BindingSource;
+            this.gridLecture.DataSource = this.campusDataSet;
             this.gridLecture.Location = new System.Drawing.Point(303, 222);
             this.gridLecture.MultiSelect = false;
             this.gridLecture.Name = "gridLecture";
@@ -459,7 +490,7 @@ namespace Curriculam
             this.课程名DataGridViewTextBoxColumn,
             this.学分DataGridViewTextBoxColumn});
             this.gridCourse.DataMember = "Course";
-            this.gridCourse.DataSource = this.campusDataSet1BindingSource;
+            this.gridCourse.DataSource = this.campusDataSet;
             this.gridCourse.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridCourse.Location = new System.Drawing.Point(19, 42);
             this.gridCourse.MultiSelect = false;
@@ -474,6 +505,161 @@ namespace Curriculam
             this.gridCourse.TabIndex = 9;
             this.gridCourse.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCourse_CellMouseClick);
             // 
+            // grpSelect
+            // 
+            this.grpSelect.Controls.Add(this.label19);
+            this.grpSelect.Controls.Add(this.label18);
+            this.grpSelect.Controls.Add(this.btnSubmitCourseSelect);
+            this.grpSelect.Controls.Add(this.btnClearCourseSelect);
+            this.grpSelect.Controls.Add(this.btnDeleteCourseSelect);
+            this.grpSelect.Controls.Add(this.btnAddCourseSelect);
+            this.grpSelect.Controls.Add(this.gridSelected);
+            this.grpSelect.Controls.Add(this.gridAvailableCourseList);
+            this.grpSelect.Enabled = false;
+            this.grpSelect.Location = new System.Drawing.Point(12, 473);
+            this.grpSelect.Name = "grpSelect";
+            this.grpSelect.Size = new System.Drawing.Size(1094, 329);
+            this.grpSelect.TabIndex = 11;
+            this.grpSelect.TabStop = false;
+            this.grpSelect.Text = "选课面板";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(585, 21);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 15);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "已选列表";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(343, 21);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(97, 15);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "可选开课列表";
+            // 
+            // btnSubmitCourseSelect
+            // 
+            this.btnSubmitCourseSelect.Location = new System.Drawing.Point(475, 262);
+            this.btnSubmitCourseSelect.Name = "btnSubmitCourseSelect";
+            this.btnSubmitCourseSelect.Size = new System.Drawing.Size(75, 44);
+            this.btnSubmitCourseSelect.TabIndex = 6;
+            this.btnSubmitCourseSelect.Text = "✔️";
+            this.btnSubmitCourseSelect.UseVisualStyleBackColor = true;
+            // 
+            // btnClearCourseSelect
+            // 
+            this.btnClearCourseSelect.Location = new System.Drawing.Point(475, 194);
+            this.btnClearCourseSelect.Name = "btnClearCourseSelect";
+            this.btnClearCourseSelect.Size = new System.Drawing.Size(75, 44);
+            this.btnClearCourseSelect.TabIndex = 6;
+            this.btnClearCourseSelect.Text = "🗑️";
+            this.btnClearCourseSelect.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteCourseSelect
+            // 
+            this.btnDeleteCourseSelect.Location = new System.Drawing.Point(475, 123);
+            this.btnDeleteCourseSelect.Name = "btnDeleteCourseSelect";
+            this.btnDeleteCourseSelect.Size = new System.Drawing.Size(75, 42);
+            this.btnDeleteCourseSelect.TabIndex = 2;
+            this.btnDeleteCourseSelect.Text = "➖";
+            this.btnDeleteCourseSelect.UseVisualStyleBackColor = true;
+            this.btnDeleteCourseSelect.Click += new System.EventHandler(this.btnDeleteCourseSelect_Click);
+            // 
+            // btnAddCourseSelect
+            // 
+            this.btnAddCourseSelect.Location = new System.Drawing.Point(475, 52);
+            this.btnAddCourseSelect.Name = "btnAddCourseSelect";
+            this.btnAddCourseSelect.Size = new System.Drawing.Size(75, 42);
+            this.btnAddCourseSelect.TabIndex = 2;
+            this.btnAddCourseSelect.Text = "➕";
+            this.btnAddCourseSelect.UseVisualStyleBackColor = true;
+            this.btnAddCourseSelect.Click += new System.EventHandler(this.btnAddCourseSelect_Click);
+            // 
+            // gridSelected
+            // 
+            this.gridSelected.AllowUserToAddRows = false;
+            this.gridSelected.AllowUserToDeleteRows = false;
+            this.gridSelected.AllowUserToOrderColumns = true;
+            this.gridSelected.AutoGenerateColumns = false;
+            this.gridSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSelected.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lectureIDDataGridViewTextBoxColumn2,
+            this.courseNameDataGridViewTextBoxColumn2,
+            this.creditDataGridViewTextBoxColumn1,
+            this.teacherNameDataGridViewTextBoxColumn2,
+            this.courseIDDataGridViewTextBoxColumn2});
+            this.gridSelected.DataMember = "StudentSelectedCourseList";
+            this.gridSelected.DataSource = this.campusDataSet;
+            this.gridSelected.Location = new System.Drawing.Point(588, 52);
+            this.gridSelected.MultiSelect = false;
+            this.gridSelected.Name = "gridSelected";
+            this.gridSelected.ReadOnly = true;
+            this.gridSelected.RowHeadersVisible = false;
+            this.gridSelected.RowHeadersWidth = 51;
+            this.gridSelected.RowTemplate.Height = 27;
+            this.gridSelected.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridSelected.Size = new System.Drawing.Size(477, 254);
+            this.gridSelected.TabIndex = 1;
+            // 
+            // gridAvailableCourseList
+            // 
+            this.gridAvailableCourseList.AllowUserToAddRows = false;
+            this.gridAvailableCourseList.AllowUserToDeleteRows = false;
+            this.gridAvailableCourseList.AllowUserToOrderColumns = true;
+            this.gridAvailableCourseList.AutoGenerateColumns = false;
+            this.gridAvailableCourseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAvailableCourseList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lectureIDDataGridViewTextBoxColumn1,
+            this.courseNameDataGridViewTextBoxColumn1,
+            this.creditDataGridViewTextBoxColumn,
+            this.teacherNameDataGridViewTextBoxColumn1,
+            this.courseIDDataGridViewTextBoxColumn1});
+            this.gridAvailableCourseList.DataMember = "StudentAvailableCourseList";
+            this.gridAvailableCourseList.DataSource = this.campusDataSet;
+            this.gridAvailableCourseList.Location = new System.Drawing.Point(19, 52);
+            this.gridAvailableCourseList.MultiSelect = false;
+            this.gridAvailableCourseList.Name = "gridAvailableCourseList";
+            this.gridAvailableCourseList.ReadOnly = true;
+            this.gridAvailableCourseList.RowHeadersVisible = false;
+            this.gridAvailableCourseList.RowHeadersWidth = 51;
+            this.gridAvailableCourseList.RowTemplate.Height = 27;
+            this.gridAvailableCourseList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridAvailableCourseList.Size = new System.Drawing.Size(421, 254);
+            this.gridAvailableCourseList.TabIndex = 0;
+            // 
+            // timePeriodTableAdapter1
+            // 
+            this.timePeriodTableAdapter1.ClearBeforeFill = true;
+            // 
+            // studentAvailableCourseListTableAdapter1
+            // 
+            this.studentAvailableCourseListTableAdapter1.ClearBeforeFill = true;
+            // 
+            // studentTableAdapter1
+            // 
+            this.studentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // courseListTableAdapter1
+            // 
+            this.courseListTableAdapter1.ClearBeforeFill = true;
+            // 
+            // studentSelectedCourseListTableAdapter1
+            // 
+            this.studentSelectedCourseListTableAdapter1.ClearBeforeFill = true;
+            // 
+            // courseTableAdapter1
+            // 
+            this.courseTableAdapter1.ClearBeforeFill = true;
+            // 
+            // campusDataSet
+            // 
+            this.campusDataSet.DataSetName = "campusDataSet";
+            this.campusDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // 课程号DataGridViewTextBoxColumn
             // 
             this.课程号DataGridViewTextBoxColumn.DataPropertyName = "课程号";
@@ -481,7 +667,7 @@ namespace Curriculam
             this.课程号DataGridViewTextBoxColumn.MinimumWidth = 6;
             this.课程号DataGridViewTextBoxColumn.Name = "课程号DataGridViewTextBoxColumn";
             this.课程号DataGridViewTextBoxColumn.ReadOnly = true;
-            this.课程号DataGridViewTextBoxColumn.Width = 65;
+            this.课程号DataGridViewTextBoxColumn.Width = 125;
             // 
             // 课程名DataGridViewTextBoxColumn
             // 
@@ -499,136 +685,97 @@ namespace Curriculam
             this.学分DataGridViewTextBoxColumn.MinimumWidth = 6;
             this.学分DataGridViewTextBoxColumn.Name = "学分DataGridViewTextBoxColumn";
             this.学分DataGridViewTextBoxColumn.ReadOnly = true;
-            this.学分DataGridViewTextBoxColumn.Width = 40;
+            this.学分DataGridViewTextBoxColumn.Width = 125;
             // 
-            // grpSelect
+            // lectureIDDataGridViewTextBoxColumn1
             // 
-            this.grpSelect.Controls.Add(this.btnSubmitCourseSelect);
-            this.grpSelect.Controls.Add(this.btnClearCourseSelect);
-            this.grpSelect.Controls.Add(this.btnDeleteCourseSelect);
-            this.grpSelect.Controls.Add(this.btnAddCourseSelect);
-            this.grpSelect.Controls.Add(this.dataGridView2);
-            this.grpSelect.Controls.Add(this.dataGridView1);
-            this.grpSelect.Enabled = false;
-            this.grpSelect.Location = new System.Drawing.Point(12, 473);
-            this.grpSelect.Name = "grpSelect";
-            this.grpSelect.Size = new System.Drawing.Size(1094, 329);
-            this.grpSelect.TabIndex = 11;
-            this.grpSelect.TabStop = false;
-            this.grpSelect.Text = "选课面板";
+            this.lectureIDDataGridViewTextBoxColumn1.DataPropertyName = "LectureID";
+            this.lectureIDDataGridViewTextBoxColumn1.HeaderText = "LectureID";
+            this.lectureIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.lectureIDDataGridViewTextBoxColumn1.Name = "lectureIDDataGridViewTextBoxColumn1";
+            this.lectureIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lectureIDDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // label14
+            // courseNameDataGridViewTextBoxColumn1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(57, 291);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 15);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "已选课程数";
+            this.courseNameDataGridViewTextBoxColumn1.DataPropertyName = "CourseName";
+            this.courseNameDataGridViewTextBoxColumn1.HeaderText = "CourseName";
+            this.courseNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.courseNameDataGridViewTextBoxColumn1.Name = "courseNameDataGridViewTextBoxColumn1";
+            this.courseNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.courseNameDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // label15
+            // creditDataGridViewTextBoxColumn
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(196, 291);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 15);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "0";
+            this.creditDataGridViewTextBoxColumn.DataPropertyName = "Credit";
+            this.creditDataGridViewTextBoxColumn.HeaderText = "Credit";
+            this.creditDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
+            this.creditDataGridViewTextBoxColumn.ReadOnly = true;
+            this.creditDataGridViewTextBoxColumn.Width = 125;
             // 
-            // label16
+            // teacherNameDataGridViewTextBoxColumn1
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(57, 253);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 15);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "已选学分";
+            this.teacherNameDataGridViewTextBoxColumn1.DataPropertyName = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn1.HeaderText = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.teacherNameDataGridViewTextBoxColumn1.Name = "teacherNameDataGridViewTextBoxColumn1";
+            this.teacherNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.teacherNameDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // label17
+            // courseIDDataGridViewTextBoxColumn1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(196, 253);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(15, 15);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "0";
+            this.courseIDDataGridViewTextBoxColumn1.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn1.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn1.Name = "courseIDDataGridViewTextBoxColumn1";
+            this.courseIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.courseIDDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // dataGridView1
+            // lectureIDDataGridViewTextBoxColumn2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(421, 264);
-            this.dataGridView1.TabIndex = 0;
+            this.lectureIDDataGridViewTextBoxColumn2.DataPropertyName = "LectureID";
+            this.lectureIDDataGridViewTextBoxColumn2.HeaderText = "LectureID";
+            this.lectureIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.lectureIDDataGridViewTextBoxColumn2.Name = "lectureIDDataGridViewTextBoxColumn2";
+            this.lectureIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.lectureIDDataGridViewTextBoxColumn2.Width = 125;
             // 
-            // dataGridView2
+            // courseNameDataGridViewTextBoxColumn2
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(588, 42);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(477, 264);
-            this.dataGridView2.TabIndex = 1;
+            this.courseNameDataGridViewTextBoxColumn2.DataPropertyName = "CourseName";
+            this.courseNameDataGridViewTextBoxColumn2.HeaderText = "CourseName";
+            this.courseNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.courseNameDataGridViewTextBoxColumn2.Name = "courseNameDataGridViewTextBoxColumn2";
+            this.courseNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.courseNameDataGridViewTextBoxColumn2.Width = 125;
             // 
-            // btnAddCourseSelect
+            // creditDataGridViewTextBoxColumn1
             // 
-            this.btnAddCourseSelect.Enabled = false;
-            this.btnAddCourseSelect.Location = new System.Drawing.Point(475, 41);
-            this.btnAddCourseSelect.Name = "btnAddCourseSelect";
-            this.btnAddCourseSelect.Size = new System.Drawing.Size(75, 42);
-            this.btnAddCourseSelect.TabIndex = 2;
-            this.btnAddCourseSelect.Text = "➕";
-            this.btnAddCourseSelect.UseVisualStyleBackColor = true;
+            this.creditDataGridViewTextBoxColumn1.DataPropertyName = "Credit";
+            this.creditDataGridViewTextBoxColumn1.HeaderText = "Credit";
+            this.creditDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.creditDataGridViewTextBoxColumn1.Name = "creditDataGridViewTextBoxColumn1";
+            this.creditDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.creditDataGridViewTextBoxColumn1.Width = 125;
             // 
-            // btnDeleteCourseSelect
+            // teacherNameDataGridViewTextBoxColumn2
             // 
-            this.btnDeleteCourseSelect.Enabled = false;
-            this.btnDeleteCourseSelect.Location = new System.Drawing.Point(475, 119);
-            this.btnDeleteCourseSelect.Name = "btnDeleteCourseSelect";
-            this.btnDeleteCourseSelect.Size = new System.Drawing.Size(75, 42);
-            this.btnDeleteCourseSelect.TabIndex = 2;
-            this.btnDeleteCourseSelect.Text = "➖";
-            this.btnDeleteCourseSelect.UseVisualStyleBackColor = true;
+            this.teacherNameDataGridViewTextBoxColumn2.DataPropertyName = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn2.HeaderText = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.teacherNameDataGridViewTextBoxColumn2.Name = "teacherNameDataGridViewTextBoxColumn2";
+            this.teacherNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.teacherNameDataGridViewTextBoxColumn2.Width = 125;
             // 
-            // btnClearCourseSelect
+            // courseIDDataGridViewTextBoxColumn2
             // 
-            this.btnClearCourseSelect.Location = new System.Drawing.Point(475, 188);
-            this.btnClearCourseSelect.Name = "btnClearCourseSelect";
-            this.btnClearCourseSelect.Size = new System.Drawing.Size(75, 44);
-            this.btnClearCourseSelect.TabIndex = 6;
-            this.btnClearCourseSelect.Text = "🗑️";
-            this.btnClearCourseSelect.UseVisualStyleBackColor = true;
-            // 
-            // btnSubmitCourseSelect
-            // 
-            this.btnSubmitCourseSelect.Enabled = false;
-            this.btnSubmitCourseSelect.Location = new System.Drawing.Point(475, 262);
-            this.btnSubmitCourseSelect.Name = "btnSubmitCourseSelect";
-            this.btnSubmitCourseSelect.Size = new System.Drawing.Size(75, 44);
-            this.btnSubmitCourseSelect.TabIndex = 6;
-            this.btnSubmitCourseSelect.Text = "✔️";
-            this.btnSubmitCourseSelect.UseVisualStyleBackColor = true;
-            // 
-            // label_CanSubmit
-            // 
-            this.label_CanSubmit.AutoSize = true;
-            this.label_CanSubmit.ForeColor = System.Drawing.Color.Maroon;
-            this.label_CanSubmit.Location = new System.Drawing.Point(69, 337);
-            this.label_CanSubmit.Name = "label_CanSubmit";
-            this.label_CanSubmit.Size = new System.Drawing.Size(142, 15);
-            this.label_CanSubmit.TabIndex = 4;
-            this.label_CanSubmit.Text = "当前不符合选课要求";
+            this.courseIDDataGridViewTextBoxColumn2.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn2.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn2.Name = "courseIDDataGridViewTextBoxColumn2";
+            this.courseIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.courseIDDataGridViewTextBoxColumn2.Width = 125;
             // 
             // MainWindow
             // 
@@ -645,8 +792,6 @@ namespace Curriculam
             this.Name = "MainWindow";
             this.Text = "Curriculam 选课管理系统";
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet1)).EndInit();
             this.grpStatistic.ResumeLayout(false);
             this.grpStatistic.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -655,8 +800,10 @@ namespace Curriculam
             ((System.ComponentModel.ISupportInitialize)(this.gridLecture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCourse)).EndInit();
             this.grpSelect.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.grpSelect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSelected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAvailableCourseList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,12 +814,6 @@ namespace Curriculam
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource campusDataSet1BindingSource;
-        private campusDataSet campusDataSet1;
-        private campusDataSetTableAdapters.CourseTableAdapter courseTableAdapter1;
-        private campusDataSetTableAdapters.CourseListTableAdapter courseListTableAdapter1;
-        private campusDataSetTableAdapters.StudentTableAdapter studentTableAdapter1;
-        private campusDataSetTableAdapters.TimePeriodTableAdapter timePeriodTableAdapter1;
         private System.Windows.Forms.GroupBox grpStatistic;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -687,22 +828,8 @@ namespace Curriculam
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gridCourseList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView gridLecture;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 上课地点DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 开始周DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 结束周DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 星期DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 开始节DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 结束节DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 开课号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView gridCourse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 课程号DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 学分DataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox grpSelect;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -712,9 +839,42 @@ namespace Curriculam
         private System.Windows.Forms.Button btnClearCourseSelect;
         private System.Windows.Forms.Button btnDeleteCourseSelect;
         private System.Windows.Forms.Button btnAddCourseSelect;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridSelected;
+        private System.Windows.Forms.DataGridView gridAvailableCourseList;
         private System.Windows.Forms.Label label_CanSubmit;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 上课地点DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开始周DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 结束周DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 星期DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开始节DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 结束节DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开课号DataGridViewTextBoxColumn;
+        private campusDataSetTableAdapters.TimePeriodTableAdapter timePeriodTableAdapter1;
+        private campusDataSetTableAdapters.StudentAvailableCourseListTableAdapter studentAvailableCourseListTableAdapter1;
+        private campusDataSetTableAdapters.StudentTableAdapter studentTableAdapter1;
+        private campusDataSetTableAdapters.CourseListTableAdapter courseListTableAdapter1;
+        private campusDataSetTableAdapters.StudentSelectedCourseListTableAdapter studentSelectedCourseListTableAdapter1;
+        private campusDataSetTableAdapters.CourseTableAdapter courseTableAdapter1;
+        private campusDataSet campusDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 课程号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 学分DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn1;
     }
 }
 
