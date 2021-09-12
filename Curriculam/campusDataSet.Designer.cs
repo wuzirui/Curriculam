@@ -3058,6 +3058,8 @@ namespace Curriculam {
             
             private global::System.Data.DataColumn columnStudentID;
             
+            private global::System.Data.DataColumn columnStudentID1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public StudentAvailableCourseListDataTable() {
@@ -3141,6 +3143,14 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StudentID1Column {
+                get {
+                    return this.columnStudentID1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3176,7 +3186,7 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public StudentAvailableCourseListRow AddStudentAvailableCourseListRow(int LectureID, string CourseName, float Credit, string TeacherName, CourseRow parentCourseRowByFK_AVAILABL_COURSEOPE_COURSE2, int StudentID) {
+            public StudentAvailableCourseListRow AddStudentAvailableCourseListRow(int LectureID, string CourseName, float Credit, string TeacherName, CourseRow parentCourseRowByFK_AVAILABL_COURSEOPE_COURSE2, int StudentID, string StudentID1) {
                 StudentAvailableCourseListRow rowStudentAvailableCourseListRow = ((StudentAvailableCourseListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         LectureID,
@@ -3184,7 +3194,8 @@ namespace Curriculam {
                         Credit,
                         TeacherName,
                         null,
-                        StudentID};
+                        StudentID,
+                        StudentID1};
                 if ((parentCourseRowByFK_AVAILABL_COURSEOPE_COURSE2 != null)) {
                     columnValuesArray[4] = parentCourseRowByFK_AVAILABL_COURSEOPE_COURSE2[0];
                 }
@@ -3223,6 +3234,7 @@ namespace Curriculam {
                 this.columnTeacherName = base.Columns["TeacherName"];
                 this.columnCourseID = base.Columns["CourseID"];
                 this.columnStudentID = base.Columns["StudentID"];
+                this.columnStudentID1 = base.Columns["StudentID1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3240,6 +3252,8 @@ namespace Curriculam {
                 base.Columns.Add(this.columnCourseID);
                 this.columnStudentID = new global::System.Data.DataColumn("StudentID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStudentID);
+                this.columnStudentID1 = new global::System.Data.DataColumn("StudentID1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudentID1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnLectureID}, true));
                 this.columnLectureID.AllowDBNull = false;
@@ -3248,6 +3262,9 @@ namespace Curriculam {
                 this.columnTeacherName.MaxLength = 2147483647;
                 this.columnCourseID.AllowDBNull = false;
                 this.columnStudentID.ReadOnly = true;
+                this.columnStudentID1.ReadOnly = true;
+                this.columnStudentID1.Caption = "StudentID";
+                this.columnStudentID1.MaxLength = 1024;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4735,6 +4752,22 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string StudentID1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudentAvailableCourseList.StudentID1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“StudentAvailableCourseList”中列“StudentID1”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableStudentAvailableCourseList.StudentID1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CourseRow CourseRow {
                 get {
                     return ((CourseRow)(this.GetParentRow(this.Table.ParentRelations["FK_AVAILABL_COURSEOPE_COURSE2"])));
@@ -4790,6 +4823,18 @@ namespace Curriculam {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetStudentIDNull() {
                 this[this.tableStudentAvailableCourseList.StudentIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsStudentID1Null() {
+                return this.IsNull(this.tableStudentAvailableCourseList.StudentID1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetStudentID1Null() {
+                this[this.tableStudentAvailableCourseList.StudentID1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7786,7 +7831,7 @@ WHERE   (AvailableCourse.CourseID = @CID)";
             tableMapping.ColumnMappings.Add("Credit", "Credit");
             tableMapping.ColumnMappings.Add("TeacherName", "TeacherName");
             tableMapping.ColumnMappings.Add("CourseID", "CourseID");
-            tableMapping.ColumnMappings.Add("StudentID", "StudentID");
+            tableMapping.ColumnMappings.Add("StudentID", "StudentID1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7808,11 +7853,7 @@ FROM      AvailableCourse INNER JOIN
                    Course ON AvailableCourse.CourseID = Course.CourseID INNER JOIN
                    DeliverLecture ON AvailableCourse.LectureID = DeliverLecture.LectureID INNER JOIN
                    Teacher ON DeliverLecture.StaffID = Teacher.StaffID
-WHERE   (AvailableCourse.CourseID NOT IN
-                       (SELECT  AvailableCourse_1.CourseID
-                        FROM       CourseTaken INNER JOIN
-                                           AvailableCourse AS AvailableCourse_1 ON CourseTaken.LectureID = AvailableCourse_1.CourseID
-                        WHERE    (CourseTaken.StudentID = @SID)))";
+";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SID", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

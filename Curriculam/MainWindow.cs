@@ -200,6 +200,8 @@ namespace Curriculam
         {
             this.studentSelectedCourseListTableAdapter1.Adapter
                 .Update(campusDataSet);
+            this.studentSelectedCourseListTableAdapter1.FillSelected(
+                this.campusDataSet.StudentSelectedCourseList, chosenSID.ToString());
         }
 
         private void refreshAvailableCourse()
@@ -209,6 +211,7 @@ namespace Curriculam
                 this.campusDataSet.StudentAvailableCourseList, sid.ToString());
 
             float totalCredit = 0;
+            int totalCourse = 0;
 
             // 删去所有和现在课程冲突的课
             foreach (campusDataSet.StudentSelectedCourseListRow sel in campusDataSet.StudentSelectedCourseList.Rows)
@@ -217,6 +220,7 @@ namespace Curriculam
                 var cid = sel.CourseID;
                 // 计算选中课程总学分
                 totalCredit += sel.Credit;
+                totalCourse++;
                 foreach(campusDataSet.StudentAvailableCourseListRow row in campusDataSet.StudentAvailableCourseList.Rows)
                 {
                     if (row.RowState != DataRowState.Deleted && row.CourseID == cid)
@@ -226,7 +230,6 @@ namespace Curriculam
                 }
             }
 
-            int totalCourse = campusDataSet.StudentSelectedCourseList.Count;
 
             labelSelectedCredit.Text = totalCredit.ToString();
             labelSelectedCourse.Text = totalCourse.ToString();

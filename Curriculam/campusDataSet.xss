@@ -14,7 +14,7 @@
     <Shape ID="DesignTable:Teacher" ZOrder="26" X="791" Y="503" Height="135" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:TimePeriod" ZOrder="23" X="437" Y="708" Height="273" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:CourseList" ZOrder="17" X="1042" Y="72" Height="181" Width="253" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:StudentAvailableCourseList" ZOrder="1" X="1176" Y="309" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
+    <Shape ID="DesignTable:StudentAvailableCourseList" ZOrder="1" X="1176" Y="309" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:StudentSelectedCourseList" ZOrder="2" X="1209" Y="635" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
   </Shapes>
   <Connectors>
@@ -182,15 +182,15 @@
       <RoutePoints>
         <Point>
           <X>1193</X>
-          <Y>536</Y>
+          <Y>559</Y>
         </Point>
         <Point>
           <X>1193</X>
-          <Y>557</Y>
+          <Y>567</Y>
         </Point>
         <Point>
           <X>721</X>
-          <Y>557</Y>
+          <Y>567</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -198,7 +198,7 @@
       <RoutePoints>
         <Point>
           <X>1201</X>
-          <Y>536</Y>
+          <Y>559</Y>
         </Point>
         <Point>
           <X>1201</X>
