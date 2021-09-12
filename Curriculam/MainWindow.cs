@@ -33,36 +33,62 @@ namespace Curriculam
             int id = isValidIntegerStr(txtStudentID.Text) ? int.Parse(txtStudentID.Text) : 0;
             if (id != 0)
             {
-                string name = this.studentTableAdapter.QueryStudentName(id);
+                string name = this.studentTableAdapter1.QueryStudentName(id);
                 if (name == null)
                 {
                     name = "Not Found";
                     studentChanged(false);
                 }
+                else
+                {
+                    studentChanged(true, id);
+                }
                 txtStudentName.Text = name;
-                studentChanged(true, id);
             }
-            txtStudentName.Text = "Invalid";
-            studentChanged(false);
+            else
+            {
+                txtStudentName.Text = "Invalid";
+                studentChanged(false);
+            }
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“campusDataSet1.AvailableCourseList”中。您可以根据需要移动或删除它。
-            this.courseTableAdapter1.Fill(this.campusDataSet.Course);
-            this.courseListTableAdapter1.Fill(this.campusDataSet.CourseList);
+            this.courseTableAdapter1.Fill(this.campusDataSet1.Course);
+            courseUnselected();
+            this.gridCourseList.ClearSelection();
         }
 
+        private bool haveChosenCourse = false;
+        private int  chosenCID = -1;
         private void gridCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             int cid = int.Parse(gridCourse.Rows[index].Cells[0].Value.ToString());
-            courseSelected(cid);
+            if (haveChosenCourse && chosenCID == cid)
+            {
+                haveChosenCourse = false;
+                chosenCID = -1;
+                courseUnselected();
+            }
+            else
+            {
+                haveChosenCourse = true;
+                chosenCID = cid;
+                courseSelected();
+            }
         }
 
-        private void courseSelected(int cid)
+        private void courseSelected()
         {
-            this.courseListTableAdapter1.FillBy(this.campusDataSet.CourseList, cid);
+            this.courseListTableAdapter1.FillBy(this.campusDataSet1.CourseList, chosenCID);
+        }
+
+        private void courseUnselected()
+        {
+            this.courseListTableAdapter1.Fill(this.campusDataSet1.CourseList);
+            this.gridCourse.ClearSelection();
         }
     }
 }
