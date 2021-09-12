@@ -38,10 +38,9 @@ namespace Curriculam
         }
         private void studentInit(int sid)
         {
-            this.studentAvailableCourseListTableAdapter1.FillAvailable(
-                this.campusDataSet.StudentAvailableCourseList, sid);
             this.studentSelectedCourseListTableAdapter1.FillSelected(
                 this.campusDataSet.StudentSelectedCourseList, sid);
+            refreshAvailableCourse();
         }
 
 
@@ -69,11 +68,17 @@ namespace Curriculam
             }
         }
 
+        private float minCredit = 8, maxCredit = 12;
+        private int minCourse = 3, maxCourse = 5;
         private void MainWindow_Load(object sender, EventArgs e)
         {
             this.courseTableAdapter1.Fill(this.campusDataSet.Course);
             courseUnselected();
             courseListUnselected();
+            labelMinCredit.Text = minCredit.ToString();
+            labelMaxCredit.Text = maxCredit.ToString();
+            labelMinCourse.Text = minCourse.ToString();
+            labelMaxCourse.Text = maxCourse.ToString();
         }
 
         private void courseSelected(int cid)
@@ -195,10 +200,14 @@ namespace Curriculam
             int sid = chosenSID;
             this.studentAvailableCourseListTableAdapter1.FillAvailable(
                 this.campusDataSet.StudentAvailableCourseList, sid);
+
+            float totalCredit = 0;
+
             // 删去所有和现在课程冲突的课
             foreach (campusDataSet.StudentSelectedCourseListRow sel in campusDataSet.StudentSelectedCourseList.Rows)
             {
                 var cid = sel.CourseID;
+                totalCredit += sel.Credit;
                 foreach(campusDataSet.StudentAvailableCourseListRow row in campusDataSet.StudentAvailableCourseList.Rows)
                 {
                     if (row.RowState != DataRowState.Deleted && row.CourseID == cid)

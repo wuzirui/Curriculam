@@ -35,17 +35,17 @@ namespace Curriculam
             this.label2 = new System.Windows.Forms.Label();
             this.grpStatistic = new System.Windows.Forms.GroupBox();
             this.label_CanSubmit = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelSelectedCredit = new System.Windows.Forms.Label();
+            this.labelMaxCredit = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelMaxCourse = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labelSelectedCourse = new System.Windows.Forms.Label();
+            this.labelMinCourse = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelMinCredit = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -143,17 +143,17 @@ namespace Curriculam
             // grpStatistic
             // 
             this.grpStatistic.Controls.Add(this.label_CanSubmit);
-            this.grpStatistic.Controls.Add(this.label17);
-            this.grpStatistic.Controls.Add(this.label9);
+            this.grpStatistic.Controls.Add(this.labelSelectedCredit);
+            this.grpStatistic.Controls.Add(this.labelMaxCredit);
             this.grpStatistic.Controls.Add(this.label16);
             this.grpStatistic.Controls.Add(this.label8);
-            this.grpStatistic.Controls.Add(this.label13);
+            this.grpStatistic.Controls.Add(this.labelMaxCourse);
             this.grpStatistic.Controls.Add(this.label12);
-            this.grpStatistic.Controls.Add(this.label15);
-            this.grpStatistic.Controls.Add(this.label11);
+            this.grpStatistic.Controls.Add(this.labelSelectedCourse);
+            this.grpStatistic.Controls.Add(this.labelMinCourse);
             this.grpStatistic.Controls.Add(this.label14);
             this.grpStatistic.Controls.Add(this.label10);
-            this.grpStatistic.Controls.Add(this.label7);
+            this.grpStatistic.Controls.Add(this.labelMinCredit);
             this.grpStatistic.Controls.Add(this.label6);
             this.grpStatistic.Enabled = false;
             this.grpStatistic.Location = new System.Drawing.Point(822, 67);
@@ -173,23 +173,23 @@ namespace Curriculam
             this.label_CanSubmit.TabIndex = 4;
             this.label_CanSubmit.Text = "当前不符合选课要求";
             // 
-            // label17
+            // labelSelectedCredit
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(196, 253);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(15, 15);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "0";
+            this.labelSelectedCredit.AutoSize = true;
+            this.labelSelectedCredit.Location = new System.Drawing.Point(196, 253);
+            this.labelSelectedCredit.Name = "labelSelectedCredit";
+            this.labelSelectedCredit.Size = new System.Drawing.Size(15, 15);
+            this.labelSelectedCredit.TabIndex = 3;
+            this.labelSelectedCredit.Text = "0";
             // 
-            // label9
+            // labelMaxCredit
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(196, 103);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 15);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "12";
+            this.labelMaxCredit.AutoSize = true;
+            this.labelMaxCredit.Location = new System.Drawing.Point(196, 103);
+            this.labelMaxCredit.Name = "labelMaxCredit";
+            this.labelMaxCredit.Size = new System.Drawing.Size(23, 15);
+            this.labelMaxCredit.TabIndex = 3;
+            this.labelMaxCredit.Text = "12";
             // 
             // label16
             // 
@@ -209,14 +209,14 @@ namespace Curriculam
             this.label8.TabIndex = 2;
             this.label8.Text = "要求最大学分";
             // 
-            // label13
+            // labelMaxCourse
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(196, 184);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 15);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "5";
+            this.labelMaxCourse.AutoSize = true;
+            this.labelMaxCourse.Location = new System.Drawing.Point(196, 184);
+            this.labelMaxCourse.Name = "labelMaxCourse";
+            this.labelMaxCourse.Size = new System.Drawing.Size(15, 15);
+            this.labelMaxCourse.TabIndex = 1;
+            this.labelMaxCourse.Text = "5";
             // 
             // label12
             // 
@@ -227,23 +227,23 @@ namespace Curriculam
             this.label12.TabIndex = 0;
             this.label12.Text = "要求最大课程数";
             // 
-            // label15
+            // labelSelectedCourse
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(196, 291);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 15);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "0";
+            this.labelSelectedCourse.AutoSize = true;
+            this.labelSelectedCourse.Location = new System.Drawing.Point(196, 291);
+            this.labelSelectedCourse.Name = "labelSelectedCourse";
+            this.labelSelectedCourse.Size = new System.Drawing.Size(15, 15);
+            this.labelSelectedCourse.TabIndex = 1;
+            this.labelSelectedCourse.Text = "0";
             // 
-            // label11
+            // labelMinCourse
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(196, 141);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(15, 15);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "3";
+            this.labelMinCourse.AutoSize = true;
+            this.labelMinCourse.Location = new System.Drawing.Point(196, 141);
+            this.labelMinCourse.Name = "labelMinCourse";
+            this.labelMinCourse.Size = new System.Drawing.Size(15, 15);
+            this.labelMinCourse.TabIndex = 1;
+            this.labelMinCourse.Text = "3";
             // 
             // label14
             // 
@@ -263,14 +263,14 @@ namespace Curriculam
             this.label10.TabIndex = 0;
             this.label10.Text = "要求最小课程数";
             // 
-            // label7
+            // labelMinCredit
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(196, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "8";
+            this.labelMinCredit.AutoSize = true;
+            this.labelMinCredit.Location = new System.Drawing.Point(196, 63);
+            this.labelMinCredit.Name = "labelMinCredit";
+            this.labelMinCredit.Size = new System.Drawing.Size(15, 15);
+            this.labelMinCredit.TabIndex = 1;
+            this.labelMinCredit.Text = "8";
             // 
             // label6
             // 
@@ -817,13 +817,13 @@ namespace Curriculam
         private System.Windows.Forms.Label txtStudentName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grpStatistic;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelMaxCredit;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelMinCredit;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelMinCourse;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelMaxCourse;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
@@ -833,9 +833,9 @@ namespace Curriculam
         private System.Windows.Forms.DataGridView gridLecture;
         private System.Windows.Forms.DataGridView gridCourse;
         private System.Windows.Forms.GroupBox grpSelect;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label labelSelectedCredit;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelSelectedCourse;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnSubmitCourseSelect;
         private System.Windows.Forms.Button btnClearCourseSelect;
