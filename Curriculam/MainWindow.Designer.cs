@@ -61,11 +61,6 @@ namespace Curriculam
             this.gridSelected = new System.Windows.Forms.DataGridView();
             this.campusDataSet = new Curriculam.campusDataSet();
             this.gridAvailableCourseList = new System.Windows.Forms.DataGridView();
-            this.lectureIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teacherNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridCourseList = new System.Windows.Forms.DataGridView();
             this.lectureIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +89,11 @@ namespace Curriculam
             this.creditDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacherNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpStatistic.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpSelect.SuspendLayout();
@@ -461,51 +461,6 @@ namespace Curriculam
             this.gridAvailableCourseList.Size = new System.Drawing.Size(421, 254);
             this.gridAvailableCourseList.TabIndex = 0;
             // 
-            // lectureIDDataGridViewTextBoxColumn1
-            // 
-            this.lectureIDDataGridViewTextBoxColumn1.DataPropertyName = "LectureID";
-            this.lectureIDDataGridViewTextBoxColumn1.HeaderText = "LectureID";
-            this.lectureIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.lectureIDDataGridViewTextBoxColumn1.Name = "lectureIDDataGridViewTextBoxColumn1";
-            this.lectureIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lectureIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // courseNameDataGridViewTextBoxColumn1
-            // 
-            this.courseNameDataGridViewTextBoxColumn1.DataPropertyName = "CourseName";
-            this.courseNameDataGridViewTextBoxColumn1.HeaderText = "CourseName";
-            this.courseNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.courseNameDataGridViewTextBoxColumn1.Name = "courseNameDataGridViewTextBoxColumn1";
-            this.courseNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.courseNameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // creditDataGridViewTextBoxColumn
-            // 
-            this.creditDataGridViewTextBoxColumn.DataPropertyName = "Credit";
-            this.creditDataGridViewTextBoxColumn.HeaderText = "Credit";
-            this.creditDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
-            this.creditDataGridViewTextBoxColumn.ReadOnly = true;
-            this.creditDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // teacherNameDataGridViewTextBoxColumn1
-            // 
-            this.teacherNameDataGridViewTextBoxColumn1.DataPropertyName = "TeacherName";
-            this.teacherNameDataGridViewTextBoxColumn1.HeaderText = "TeacherName";
-            this.teacherNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.teacherNameDataGridViewTextBoxColumn1.Name = "teacherNameDataGridViewTextBoxColumn1";
-            this.teacherNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.teacherNameDataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // courseIDDataGridViewTextBoxColumn1
-            // 
-            this.courseIDDataGridViewTextBoxColumn1.DataPropertyName = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn1.HeaderText = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.courseIDDataGridViewTextBoxColumn1.Name = "courseIDDataGridViewTextBoxColumn1";
-            this.courseIDDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.courseIDDataGridViewTextBoxColumn1.Width = 125;
-            // 
             // gridCourseList
             // 
             this.gridCourseList.AllowUserToAddRows = false;
@@ -742,47 +697,92 @@ namespace Curriculam
             // lectureIDDataGridViewTextBoxColumn2
             // 
             this.lectureIDDataGridViewTextBoxColumn2.DataPropertyName = "LectureID";
-            this.lectureIDDataGridViewTextBoxColumn2.HeaderText = "LectureID";
+            this.lectureIDDataGridViewTextBoxColumn2.HeaderText = "开课号";
             this.lectureIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.lectureIDDataGridViewTextBoxColumn2.Name = "lectureIDDataGridViewTextBoxColumn2";
             this.lectureIDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.lectureIDDataGridViewTextBoxColumn2.Width = 125;
+            this.lectureIDDataGridViewTextBoxColumn2.Width = 60;
             // 
             // courseNameDataGridViewTextBoxColumn2
             // 
             this.courseNameDataGridViewTextBoxColumn2.DataPropertyName = "CourseName";
-            this.courseNameDataGridViewTextBoxColumn2.HeaderText = "CourseName";
+            this.courseNameDataGridViewTextBoxColumn2.HeaderText = "课程名";
             this.courseNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.courseNameDataGridViewTextBoxColumn2.Name = "courseNameDataGridViewTextBoxColumn2";
             this.courseNameDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.courseNameDataGridViewTextBoxColumn2.Width = 125;
+            this.courseNameDataGridViewTextBoxColumn2.Width = 80;
             // 
             // creditDataGridViewTextBoxColumn1
             // 
             this.creditDataGridViewTextBoxColumn1.DataPropertyName = "Credit";
-            this.creditDataGridViewTextBoxColumn1.HeaderText = "Credit";
+            this.creditDataGridViewTextBoxColumn1.HeaderText = "学分";
             this.creditDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.creditDataGridViewTextBoxColumn1.Name = "creditDataGridViewTextBoxColumn1";
             this.creditDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.creditDataGridViewTextBoxColumn1.Width = 125;
+            this.creditDataGridViewTextBoxColumn1.Width = 60;
             // 
             // teacherNameDataGridViewTextBoxColumn2
             // 
             this.teacherNameDataGridViewTextBoxColumn2.DataPropertyName = "TeacherName";
-            this.teacherNameDataGridViewTextBoxColumn2.HeaderText = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn2.HeaderText = "主讲教师";
             this.teacherNameDataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.teacherNameDataGridViewTextBoxColumn2.Name = "teacherNameDataGridViewTextBoxColumn2";
             this.teacherNameDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.teacherNameDataGridViewTextBoxColumn2.Width = 125;
+            this.teacherNameDataGridViewTextBoxColumn2.Width = 75;
             // 
             // courseIDDataGridViewTextBoxColumn2
             // 
             this.courseIDDataGridViewTextBoxColumn2.DataPropertyName = "CourseID";
-            this.courseIDDataGridViewTextBoxColumn2.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn2.HeaderText = "课程号";
             this.courseIDDataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.courseIDDataGridViewTextBoxColumn2.Name = "courseIDDataGridViewTextBoxColumn2";
             this.courseIDDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.courseIDDataGridViewTextBoxColumn2.Width = 125;
+            this.courseIDDataGridViewTextBoxColumn2.Width = 60;
+            // 
+            // lectureIDDataGridViewTextBoxColumn1
+            // 
+            this.lectureIDDataGridViewTextBoxColumn1.DataPropertyName = "LectureID";
+            this.lectureIDDataGridViewTextBoxColumn1.HeaderText = "开课号";
+            this.lectureIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.lectureIDDataGridViewTextBoxColumn1.Name = "lectureIDDataGridViewTextBoxColumn1";
+            this.lectureIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lectureIDDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // courseNameDataGridViewTextBoxColumn1
+            // 
+            this.courseNameDataGridViewTextBoxColumn1.DataPropertyName = "CourseName";
+            this.courseNameDataGridViewTextBoxColumn1.HeaderText = "课程名";
+            this.courseNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.courseNameDataGridViewTextBoxColumn1.Name = "courseNameDataGridViewTextBoxColumn1";
+            this.courseNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.courseNameDataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // creditDataGridViewTextBoxColumn
+            // 
+            this.creditDataGridViewTextBoxColumn.DataPropertyName = "Credit";
+            this.creditDataGridViewTextBoxColumn.HeaderText = "学分";
+            this.creditDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.creditDataGridViewTextBoxColumn.Name = "creditDataGridViewTextBoxColumn";
+            this.creditDataGridViewTextBoxColumn.ReadOnly = true;
+            this.creditDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // teacherNameDataGridViewTextBoxColumn1
+            // 
+            this.teacherNameDataGridViewTextBoxColumn1.DataPropertyName = "TeacherName";
+            this.teacherNameDataGridViewTextBoxColumn1.HeaderText = "主讲教师";
+            this.teacherNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.teacherNameDataGridViewTextBoxColumn1.Name = "teacherNameDataGridViewTextBoxColumn1";
+            this.teacherNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.teacherNameDataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // courseIDDataGridViewTextBoxColumn1
+            // 
+            this.courseIDDataGridViewTextBoxColumn1.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn1.HeaderText = "课程号";
+            this.courseIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn1.Name = "courseIDDataGridViewTextBoxColumn1";
+            this.courseIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.courseIDDataGridViewTextBoxColumn1.Width = 60;
             // 
             // MainWindow
             // 
@@ -872,16 +872,16 @@ namespace Curriculam
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 学分DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lectureIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacherNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn1;
     }
 }
 
