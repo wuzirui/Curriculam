@@ -62,7 +62,19 @@ namespace Curriculam
 
         private bool haveChosenCourse = false;
         private int  chosenCID = -1;
-        private void gridCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void courseSelected()
+        {
+            this.courseListTableAdapter1.FillBy(this.campusDataSet1.CourseList, chosenCID);
+        }
+
+        private void courseUnselected()
+        {
+            this.courseListTableAdapter1.Fill(this.campusDataSet1.CourseList);
+            this.gridCourse.ClearSelection();
+        }
+
+        private void gridCourse_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int index = e.RowIndex;
             int cid = int.Parse(gridCourse.Rows[index].Cells[0].Value.ToString());
@@ -78,17 +90,6 @@ namespace Curriculam
                 chosenCID = cid;
                 courseSelected();
             }
-        }
-
-        private void courseSelected()
-        {
-            this.courseListTableAdapter1.FillBy(this.campusDataSet1.CourseList, chosenCID);
-        }
-
-        private void courseUnselected()
-        {
-            this.courseListTableAdapter1.Fill(this.campusDataSet1.CourseList);
-            this.gridCourse.ClearSelection();
         }
     }
 }
