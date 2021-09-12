@@ -21,7 +21,7 @@ namespace Curriculam
 
         private bool isValidIntegerStr(string str)
         {
-            return Regex.IsMatch(str, "^[0-9]+$");
+            return Regex.IsMatch(str, "^[0-9]{10}$");
         }
 
         private bool hasChosenStudent = false;
