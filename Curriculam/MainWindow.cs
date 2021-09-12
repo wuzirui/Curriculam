@@ -149,15 +149,30 @@ namespace Curriculam
                 return;
             }
 
+            // 虽然使用循环来访问，但是其实限制了只能选中一个
+            // 这样是为了避免选中的行中本身有冲突
             for (int i = 0; i < gridAvailableCourseList.SelectedRows.Count; i++)
             {
+                // 当前选中的行
                 DataGridViewRow row = gridAvailableCourseList.SelectedRows[i];
                 int lid = int.Parse(row.Cells[0].Value.ToString());
                 
+                // 在Dataset中找到相应的位置
                 var rrow = campusDataSet.StudentAvailableCourseList.FindByLectureID(lid);
-                //campusDataSet.StudentSelectedCourseList.AddStudentSelectedCourseListRow(rrow.LectureID, rrow.CourseName, 
-                    //rrow.Credit, rrow.TeacherName, campusDataSet.Course.FindBy课程号());
-                rrow.Delete();
+
+                // 添加到已选的课程中
+                campusDataSet.StudentSelectedCourseList.AddStudentSelectedCourseListRow(rrow.LectureID, rrow.CourseName, 
+                    rrow.Credit, rrow.TeacherName, campusDataSet.Course.FindBy课程号(rrow.CourseID));
+
+                var cid = rrow.CourseID;
+                // 删去所有和现在课程冲突的课
+                foreach (campusDataSet.StudentAvailableCourseListRow cur in campusDataSet.StudentAvailableCourseList.Rows)
+                {
+                    if (cur.RowState != DataRowState.Deleted &&  cur.CourseID == cid)
+                    {
+                        cur.Delete();
+                    }
+                }
             }
         }
 
