@@ -23,9 +23,12 @@ namespace Curriculam
             return Regex.IsMatch(str, "^[0-9]+$");
         }
 
+        private bool hasChosenStudent = false;
+        private int chosenSID = -1;
         private void studentChanged(bool isValid, int sid = 0)
         {
-            
+            hasChosenStudent = isValid;
+            chosenSID = sid;
         }
 
         private void studentIDTextBox_TextChanged(object sender, EventArgs e)
@@ -54,42 +57,72 @@ namespace Curriculam
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            // TODO: 这行代码将数据加载到表“campusDataSet1.AvailableCourseList”中。您可以根据需要移动或删除它。
             this.courseTableAdapter1.Fill(this.campusDataSet1.Course);
             courseUnselected();
-            this.gridCourseList.ClearSelection();
+            courseListUnselected();
         }
 
-        private bool haveChosenCourse = false;
-        private int  chosenCID = -1;
-
-        private void courseSelected()
+        private void courseSelected(int cid)
         {
+            hasChosenCourse = true;
+            chosenCID = cid;
             this.courseListTableAdapter1.FillBy(this.campusDataSet1.CourseList, chosenCID);
+            courseListUnselected();
         }
 
         private void courseUnselected()
         {
+            hasChosenCourse = false;
             this.courseListTableAdapter1.Fill(this.campusDataSet1.CourseList);
             this.gridCourse.ClearSelection();
+            courseListUnselected();
         }
 
+        private bool hasChosenCourse = false;
+        private int  chosenCID = -1;
         private void gridCourse_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int index = e.RowIndex;
             int cid = int.Parse(gridCourse.Rows[index].Cells[0].Value.ToString());
-            if (haveChosenCourse && chosenCID == cid)
+            if (hasChosenCourse && chosenCID == cid)
             {
-                haveChosenCourse = false;
-                chosenCID = -1;
                 courseUnselected();
             }
             else
             {
-                haveChosenCourse = true;
-                chosenCID = cid;
-                courseSelected();
+                courseSelected(cid);
             }
+        }
+
+        private bool hasChosenCourseList = false;
+        private int chosenCLID = -1;
+        private void gridCourseList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int index = e.RowIndex;
+            int clid = int.Parse(gridCourseList.Rows[index].Cells[0].Value.ToString());
+            if (hasChosenCourseList && chosenCLID == clid)
+            {
+                chosenCLID = -1;
+                courseListUnselected();
+            }
+            else
+            {
+                courseListSelected(clid);
+            }
+        }
+
+        private void courseListUnselected()
+        {
+            hasChosenCourseList = false;
+            this.timePeriodTableAdapter1.FillBy(this.campusDataSet1.TimePeriod, 0);
+            this.gridCourseList.ClearSelection();
+        }
+
+        private void courseListSelected(int clid)
+        {
+            hasChosenCourseList = true;
+            chosenCLID = clid;
+            this.timePeriodTableAdapter1.FillBy(this.campusDataSet1.TimePeriod, chosenCLID);
         }
     }
 }

@@ -6091,9 +6091,9 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Day, LectureID, Location, SectionEnd, SectionStart, WeekEnd, WeekStart FRO" +
-                "M TimePeriod WHERE (LectureID = @ID)";
+                "M TimePeriod WHERE (LectureID = @CLID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CLID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "LectureID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6124,9 +6124,9 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(campusDataSet.TimePeriodDataTable dataTable, int ID) {
+        public virtual int FillBy(campusDataSet.TimePeriodDataTable dataTable, int CLID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CLID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6138,9 +6138,9 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual campusDataSet.TimePeriodDataTable GetDataBy(int ID) {
+        public virtual campusDataSet.TimePeriodDataTable GetDataBy(int CLID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CLID));
             campusDataSet.TimePeriodDataTable dataTable = new campusDataSet.TimePeriodDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
