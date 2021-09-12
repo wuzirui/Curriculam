@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.OleDb;
 
 namespace Curriculam
 {
@@ -39,7 +40,7 @@ namespace Curriculam
         private void studentInit(int sid)
         {
             this.studentSelectedCourseListTableAdapter1.FillSelected(
-                this.campusDataSet.StudentSelectedCourseList, sid);
+                this.campusDataSet.StudentSelectedCourseList, sid.ToString());
             refreshAvailableCourse();
         }
 
@@ -189,24 +190,32 @@ namespace Curriculam
 
                 // 添加到已选的课程中
                 campusDataSet.StudentSelectedCourseList.AddStudentSelectedCourseListRow(rrow.LectureID, rrow.CourseName, 
-                    rrow.Credit, rrow.TeacherName, campusDataSet.Course.FindBy课程号(rrow.CourseID));
+                    rrow.Credit, rrow.TeacherName, campusDataSet.Course.FindBy课程号(rrow.CourseID), chosenSID);
 
             }
             refreshAvailableCourse();
+        }
+
+        private void btnSubmitCourseSelect_Click(object sender, EventArgs e)
+        {
+            this.studentSelectedCourseListTableAdapter1.Adapter
+                .Update(campusDataSet);
         }
 
         private void refreshAvailableCourse()
         {
             int sid = chosenSID;
             this.studentAvailableCourseListTableAdapter1.FillAvailable(
-                this.campusDataSet.StudentAvailableCourseList, sid);
+                this.campusDataSet.StudentAvailableCourseList, sid.ToString());
 
             float totalCredit = 0;
 
             // 删去所有和现在课程冲突的课
             foreach (campusDataSet.StudentSelectedCourseListRow sel in campusDataSet.StudentSelectedCourseList.Rows)
             {
+                if (sel.RowState == DataRowState.Deleted) continue;
                 var cid = sel.CourseID;
+                // 计算选中课程总学分
                 totalCredit += sel.Credit;
                 foreach(campusDataSet.StudentAvailableCourseListRow row in campusDataSet.StudentAvailableCourseList.Rows)
                 {
@@ -215,6 +224,26 @@ namespace Curriculam
                         row.Delete();
                     }
                 }
+            }
+
+            int totalCourse = campusDataSet.StudentSelectedCourseList.Count;
+
+            labelSelectedCredit.Text = totalCredit.ToString();
+            labelSelectedCourse.Text = totalCourse.ToString();
+
+            float epos = 0.0001f;
+            if ( minCredit - epos <= totalCredit && totalCredit <= maxCredit + epos
+                && minCourse <= totalCourse && totalCourse <= maxCourse)
+            {
+                label_CanSubmit.Text = "符合选课要求";
+                label_CanSubmit.ForeColor = Color.YellowGreen;
+                btnSubmitCourseSelect.Enabled = true;
+            }
+            else
+            {
+                label_CanSubmit.Text = "当前不符合选课要求";
+                label_CanSubmit.ForeColor = Color.Maroon;
+                btnSubmitCourseSelect.Enabled = false;
             }
         }
 
