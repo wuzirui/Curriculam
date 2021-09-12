@@ -38,7 +38,10 @@ namespace Curriculam
         }
         private void studentInit(int sid)
         {
-            refreshSelectedCourse();
+            this.studentAvailableCourseListTableAdapter1.FillAvailable(
+                this.campusDataSet.StudentAvailableCourseList, sid);
+            this.studentSelectedCourseListTableAdapter1.FillSelected(
+                this.campusDataSet.StudentSelectedCourseList, sid);
         }
 
 
@@ -138,7 +141,26 @@ namespace Curriculam
 
         private void btnDeleteCourseSelect_Click(object sender, EventArgs e)
         {
-            
+            if (gridSelected.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("当前未选择课程", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 虽然使用循环来访问，但是其实限制了只能选中一个
+            // 这样是为了避免选中的行中本身有冲突
+            for (int i = 0; i < gridSelected.SelectedRows.Count; i++)
+            {
+                // 当前选中的行
+                DataGridViewRow row = gridSelected.SelectedRows[i];
+                int lid = int.Parse(row.Cells[0].Value.ToString());
+                
+                // 在Dataset中找到相应的位置
+                var rrow = campusDataSet.StudentSelectedCourseList.FindByLectureID(lid);
+                rrow.Delete();
+            }
+            refreshAvailableCourse();
+
         }
 
         private void btnAddCourseSelect_Click(object sender, EventArgs e)
@@ -164,25 +186,33 @@ namespace Curriculam
                 campusDataSet.StudentSelectedCourseList.AddStudentSelectedCourseListRow(rrow.LectureID, rrow.CourseName, 
                     rrow.Credit, rrow.TeacherName, campusDataSet.Course.FindBy课程号(rrow.CourseID));
 
-                var cid = rrow.CourseID;
-                // 删去所有和现在课程冲突的课
-                foreach (campusDataSet.StudentAvailableCourseListRow cur in campusDataSet.StudentAvailableCourseList.Rows)
+            }
+            refreshAvailableCourse();
+        }
+
+        private void refreshAvailableCourse()
+        {
+            int sid = chosenSID;
+            this.studentAvailableCourseListTableAdapter1.FillAvailable(
+                this.campusDataSet.StudentAvailableCourseList, sid);
+            // 删去所有和现在课程冲突的课
+            foreach (campusDataSet.StudentSelectedCourseListRow sel in campusDataSet.StudentSelectedCourseList.Rows)
+            {
+                var cid = sel.CourseID;
+                foreach(campusDataSet.StudentAvailableCourseListRow row in campusDataSet.StudentAvailableCourseList.Rows)
                 {
-                    if (cur.RowState != DataRowState.Deleted &&  cur.CourseID == cid)
+                    if (row.RowState != DataRowState.Deleted && row.CourseID == cid)
                     {
-                        cur.Delete();
+                        row.Delete();
                     }
                 }
             }
         }
 
-        private void refreshSelectedCourse()
+        private void btnClearCourseSelect_Click(object sender, EventArgs e)
         {
-            int sid = chosenSID;
-            this.studentAvailableCourseListTableAdapter1.FillAvailable(
-                this.campusDataSet.StudentAvailableCourseList, sid);
-            this.studentSelectedCourseListTableAdapter1.FillSelected(
-                this.campusDataSet.StudentSelectedCourseList, sid);
+            campusDataSet.StudentSelectedCourseList.Clear();
+            refreshAvailableCourse();
         }
     }
 }

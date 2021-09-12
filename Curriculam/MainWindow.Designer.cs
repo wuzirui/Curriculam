@@ -543,6 +543,7 @@ namespace Curriculam
             // 
             // btnSubmitCourseSelect
             // 
+            this.btnSubmitCourseSelect.Enabled = false;
             this.btnSubmitCourseSelect.Location = new System.Drawing.Point(475, 262);
             this.btnSubmitCourseSelect.Name = "btnSubmitCourseSelect";
             this.btnSubmitCourseSelect.Size = new System.Drawing.Size(75, 44);
@@ -558,6 +559,7 @@ namespace Curriculam
             this.btnClearCourseSelect.TabIndex = 6;
             this.btnClearCourseSelect.Text = "🗑️";
             this.btnClearCourseSelect.UseVisualStyleBackColor = true;
+            this.btnClearCourseSelect.Click += new System.EventHandler(this.btnClearCourseSelect_Click);
             // 
             // btnDeleteCourseSelect
             // 
