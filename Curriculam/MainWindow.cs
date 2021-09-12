@@ -29,6 +29,7 @@ namespace Curriculam
         {
             hasChosenStudent = isValid;
             chosenSID = sid;
+            grpSelect.Enabled = grpStatistic.Enabled = isValid;
         }
 
         private void studentIDTextBox_TextChanged(object sender, EventArgs e)
