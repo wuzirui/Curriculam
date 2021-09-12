@@ -38,7 +38,7 @@ namespace Curriculam {
         
         private TimePeriodDataTable tableTimePeriod;
         
-        private AvailableCourseLsitDataTable tableAvailableCourseLsit;
+        private AvailableCourseListDataTable tableAvailableCourseList;
         
         private global::System.Data.DataRelation relationFK_AVAILABL_COURSEOPE_COURSE;
         
@@ -101,8 +101,8 @@ namespace Curriculam {
                 if ((ds.Tables["TimePeriod"] != null)) {
                     base.Tables.Add(new TimePeriodDataTable(ds.Tables["TimePeriod"]));
                 }
-                if ((ds.Tables["AvailableCourseLsit"] != null)) {
-                    base.Tables.Add(new AvailableCourseLsitDataTable(ds.Tables["AvailableCourseLsit"]));
+                if ((ds.Tables["AvailableCourseList"] != null)) {
+                    base.Tables.Add(new AvailableCourseListDataTable(ds.Tables["AvailableCourseList"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -196,9 +196,9 @@ namespace Curriculam {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AvailableCourseLsitDataTable AvailableCourseLsit {
+        public AvailableCourseListDataTable AvailableCourseList {
             get {
-                return this.tableAvailableCourseLsit;
+                return this.tableAvailableCourseList;
             }
         }
         
@@ -290,8 +290,8 @@ namespace Curriculam {
                 if ((ds.Tables["TimePeriod"] != null)) {
                     base.Tables.Add(new TimePeriodDataTable(ds.Tables["TimePeriod"]));
                 }
-                if ((ds.Tables["AvailableCourseLsit"] != null)) {
-                    base.Tables.Add(new AvailableCourseLsitDataTable(ds.Tables["AvailableCourseLsit"]));
+                if ((ds.Tables["AvailableCourseList"] != null)) {
+                    base.Tables.Add(new AvailableCourseListDataTable(ds.Tables["AvailableCourseList"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -368,10 +368,10 @@ namespace Curriculam {
                     this.tableTimePeriod.InitVars();
                 }
             }
-            this.tableAvailableCourseLsit = ((AvailableCourseLsitDataTable)(base.Tables["AvailableCourseLsit"]));
+            this.tableAvailableCourseList = ((AvailableCourseListDataTable)(base.Tables["AvailableCourseList"]));
             if ((initTable == true)) {
-                if ((this.tableAvailableCourseLsit != null)) {
-                    this.tableAvailableCourseLsit.InitVars();
+                if ((this.tableAvailableCourseList != null)) {
+                    this.tableAvailableCourseList.InitVars();
                 }
             }
             this.relationFK_AVAILABL_COURSEOPE_COURSE = this.Relations["FK_AVAILABL_COURSEOPE_COURSE"];
@@ -404,8 +404,8 @@ namespace Curriculam {
             base.Tables.Add(this.tableTeacher);
             this.tableTimePeriod = new TimePeriodDataTable();
             base.Tables.Add(this.tableTimePeriod);
-            this.tableAvailableCourseLsit = new AvailableCourseLsitDataTable();
-            base.Tables.Add(this.tableAvailableCourseLsit);
+            this.tableAvailableCourseList = new AvailableCourseListDataTable();
+            base.Tables.Add(this.tableAvailableCourseList);
             this.relationFK_AVAILABL_COURSEOPE_COURSE = new global::System.Data.DataRelation("FK_AVAILABL_COURSEOPE_COURSE", new global::System.Data.DataColumn[] {
                         this.tableCourse.课程号Column}, new global::System.Data.DataColumn[] {
                         this.tableAvailableCourse.CourseIDColumn}, false);
@@ -476,7 +476,7 @@ namespace Curriculam {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAvailableCourseLsit() {
+        private bool ShouldSerializeAvailableCourseList() {
             return false;
         }
         
@@ -557,7 +557,7 @@ namespace Curriculam {
         public delegate void TimePeriodRowChangeEventHandler(object sender, TimePeriodRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AvailableCourseLsitRowChangeEventHandler(object sender, AvailableCourseLsitRowChangeEvent e);
+        public delegate void AvailableCourseListRowChangeEventHandler(object sender, AvailableCourseListRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2598,7 +2598,7 @@ namespace Curriculam {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AvailableCourseLsitDataTable : global::System.Data.TypedTableBase<AvailableCourseLsitRow> {
+        public partial class AvailableCourseListDataTable : global::System.Data.TypedTableBase<AvailableCourseListRow> {
             
             private global::System.Data.DataColumn column开课编号;
             
@@ -2608,8 +2608,8 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitDataTable() {
-                this.TableName = "AvailableCourseLsit";
+            public AvailableCourseListDataTable() {
+                this.TableName = "AvailableCourseList";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2617,7 +2617,7 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AvailableCourseLsitDataTable(global::System.Data.DataTable table) {
+            internal AvailableCourseListDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2634,7 +2634,7 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AvailableCourseLsitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected AvailableCourseListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2674,54 +2674,54 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitRow this[int index] {
+            public AvailableCourseListRow this[int index] {
                 get {
-                    return ((AvailableCourseLsitRow)(this.Rows[index]));
+                    return ((AvailableCourseListRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowChanging;
+            public event AvailableCourseListRowChangeEventHandler AvailableCourseListRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowChanged;
+            public event AvailableCourseListRowChangeEventHandler AvailableCourseListRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowDeleting;
+            public event AvailableCourseListRowChangeEventHandler AvailableCourseListRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AvailableCourseLsitRowChangeEventHandler AvailableCourseLsitRowDeleted;
+            public event AvailableCourseListRowChangeEventHandler AvailableCourseListRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAvailableCourseLsitRow(AvailableCourseLsitRow row) {
+            public void AddAvailableCourseListRow(AvailableCourseListRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitRow AddAvailableCourseLsitRow(int 开课编号, string 课程名, string 主讲教师) {
-                AvailableCourseLsitRow rowAvailableCourseLsitRow = ((AvailableCourseLsitRow)(this.NewRow()));
+            public AvailableCourseListRow AddAvailableCourseListRow(int 开课编号, string 课程名, string 主讲教师) {
+                AvailableCourseListRow rowAvailableCourseListRow = ((AvailableCourseListRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         开课编号,
                         课程名,
                         主讲教师};
-                rowAvailableCourseLsitRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAvailableCourseLsitRow);
-                return rowAvailableCourseLsitRow;
+                rowAvailableCourseListRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAvailableCourseListRow);
+                return rowAvailableCourseListRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitRow FindBy开课编号(int 开课编号) {
-                return ((AvailableCourseLsitRow)(this.Rows.Find(new object[] {
+            public AvailableCourseListRow FindBy开课编号(int 开课编号) {
+                return ((AvailableCourseListRow)(this.Rows.Find(new object[] {
                             开课编号})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AvailableCourseLsitDataTable cln = ((AvailableCourseLsitDataTable)(base.Clone()));
+                AvailableCourseListDataTable cln = ((AvailableCourseListDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2729,7 +2729,7 @@ namespace Curriculam {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AvailableCourseLsitDataTable();
+                return new AvailableCourseListDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2759,28 +2759,28 @@ namespace Curriculam {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitRow NewAvailableCourseLsitRow() {
-                return ((AvailableCourseLsitRow)(this.NewRow()));
+            public AvailableCourseListRow NewAvailableCourseListRow() {
+                return ((AvailableCourseListRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AvailableCourseLsitRow(builder);
+                return new AvailableCourseListRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AvailableCourseLsitRow);
+                return typeof(AvailableCourseListRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AvailableCourseLsitRowChanged != null)) {
-                    this.AvailableCourseLsitRowChanged(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                if ((this.AvailableCourseListRowChanged != null)) {
+                    this.AvailableCourseListRowChanged(this, new AvailableCourseListRowChangeEvent(((AvailableCourseListRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2788,8 +2788,8 @@ namespace Curriculam {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AvailableCourseLsitRowChanging != null)) {
-                    this.AvailableCourseLsitRowChanging(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                if ((this.AvailableCourseListRowChanging != null)) {
+                    this.AvailableCourseListRowChanging(this, new AvailableCourseListRowChangeEvent(((AvailableCourseListRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2797,8 +2797,8 @@ namespace Curriculam {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AvailableCourseLsitRowDeleted != null)) {
-                    this.AvailableCourseLsitRowDeleted(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                if ((this.AvailableCourseListRowDeleted != null)) {
+                    this.AvailableCourseListRowDeleted(this, new AvailableCourseListRowChangeEvent(((AvailableCourseListRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2806,14 +2806,14 @@ namespace Curriculam {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AvailableCourseLsitRowDeleting != null)) {
-                    this.AvailableCourseLsitRowDeleting(this, new AvailableCourseLsitRowChangeEvent(((AvailableCourseLsitRow)(e.Row)), e.Action));
+                if ((this.AvailableCourseListRowDeleting != null)) {
+                    this.AvailableCourseListRowDeleting(this, new AvailableCourseListRowChangeEvent(((AvailableCourseListRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAvailableCourseLsitRow(AvailableCourseLsitRow row) {
+            public void RemoveAvailableCourseListRow(AvailableCourseListRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2840,7 +2840,7 @@ namespace Curriculam {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AvailableCourseLsitDataTable";
+                attribute2.FixedValue = "AvailableCourseListDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3567,25 +3567,25 @@ namespace Curriculam {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AvailableCourseLsitRow : global::System.Data.DataRow {
+        public partial class AvailableCourseListRow : global::System.Data.DataRow {
             
-            private AvailableCourseLsitDataTable tableAvailableCourseLsit;
+            private AvailableCourseListDataTable tableAvailableCourseList;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AvailableCourseLsitRow(global::System.Data.DataRowBuilder rb) : 
+            internal AvailableCourseListRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAvailableCourseLsit = ((AvailableCourseLsitDataTable)(this.Table));
+                this.tableAvailableCourseList = ((AvailableCourseListDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int 开课编号 {
                 get {
-                    return ((int)(this[this.tableAvailableCourseLsit.开课编号Column]));
+                    return ((int)(this[this.tableAvailableCourseList.开课编号Column]));
                 }
                 set {
-                    this[this.tableAvailableCourseLsit.开课编号Column] = value;
+                    this[this.tableAvailableCourseList.开课编号Column] = value;
                 }
             }
             
@@ -3594,14 +3594,14 @@ namespace Curriculam {
             public string 课程名 {
                 get {
                     try {
-                        return ((string)(this[this.tableAvailableCourseLsit.课程名Column]));
+                        return ((string)(this[this.tableAvailableCourseList.课程名Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“AvailableCourseLsit”中列“课程名”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“AvailableCourseList”中列“课程名”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableAvailableCourseLsit.课程名Column] = value;
+                    this[this.tableAvailableCourseList.课程名Column] = value;
                 }
             }
             
@@ -3610,39 +3610,39 @@ namespace Curriculam {
             public string 主讲教师 {
                 get {
                     try {
-                        return ((string)(this[this.tableAvailableCourseLsit.主讲教师Column]));
+                        return ((string)(this[this.tableAvailableCourseList.主讲教师Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“AvailableCourseLsit”中列“主讲教师”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“AvailableCourseList”中列“主讲教师”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableAvailableCourseLsit.主讲教师Column] = value;
+                    this[this.tableAvailableCourseList.主讲教师Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is课程名Null() {
-                return this.IsNull(this.tableAvailableCourseLsit.课程名Column);
+                return this.IsNull(this.tableAvailableCourseList.课程名Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set课程名Null() {
-                this[this.tableAvailableCourseLsit.课程名Column] = global::System.Convert.DBNull;
+                this[this.tableAvailableCourseList.课程名Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is主讲教师Null() {
-                return this.IsNull(this.tableAvailableCourseLsit.主讲教师Column);
+                return this.IsNull(this.tableAvailableCourseList.主讲教师Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set主讲教师Null() {
-                this[this.tableAvailableCourseLsit.主讲教师Column] = global::System.Convert.DBNull;
+                this[this.tableAvailableCourseList.主讲教师Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -3888,22 +3888,22 @@ namespace Curriculam {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AvailableCourseLsitRowChangeEvent : global::System.EventArgs {
+        public class AvailableCourseListRowChangeEvent : global::System.EventArgs {
             
-            private AvailableCourseLsitRow eventRow;
+            private AvailableCourseListRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitRowChangeEvent(AvailableCourseLsitRow row, global::System.Data.DataRowAction action) {
+            public AvailableCourseListRowChangeEvent(AvailableCourseListRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AvailableCourseLsitRow Row {
+            public AvailableCourseListRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6066,7 +6066,7 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AvailableCourseLsitTableAdapter : global::System.ComponentModel.Component {
+    public partial class AvailableCourseListTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -6080,7 +6080,7 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AvailableCourseLsitTableAdapter() {
+        public AvailableCourseListTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -6177,7 +6177,7 @@ SELECT StaffID, LectureID FROM DeliverLecture WHERE (LectureID = @LectureID) AND
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AvailableCourseLsit";
+            tableMapping.DataSetTable = "AvailableCourseList";
             tableMapping.ColumnMappings.Add("开课编号", "开课编号");
             tableMapping.ColumnMappings.Add("课程名", "课程名");
             tableMapping.ColumnMappings.Add("主讲教师", "主讲教师");
@@ -6209,7 +6209,7 @@ FROM      AvailableCourse INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(campusDataSet.AvailableCourseLsitDataTable dataTable) {
+        public virtual int Fill(campusDataSet.AvailableCourseListDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6222,9 +6222,9 @@ FROM      AvailableCourse INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual campusDataSet.AvailableCourseLsitDataTable GetData() {
+        public virtual campusDataSet.AvailableCourseListDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            campusDataSet.AvailableCourseLsitDataTable dataTable = new campusDataSet.AvailableCourseLsitDataTable();
+            campusDataSet.AvailableCourseListDataTable dataTable = new campusDataSet.AvailableCourseListDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

@@ -42,18 +42,32 @@ namespace Curriculam
             this.campusDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.课程号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.课程名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridAvailableCourse = new System.Windows.Forms.DataGridView();
+            this.campusDataSet1 = new Curriculam.campusDataSet();
+            this.availableCourseListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.availableCourseListTableAdapter = new Curriculam.campusDataSetTableAdapters.AvailableCourseListTableAdapter();
+            this.开课编号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.课程名DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.主讲教师DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridLecture = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAvailableCourse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availableCourseListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLecture)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.gridLecture);
+            this.groupBox1.Controls.Add(this.gridAvailableCourse);
             this.groupBox1.Controls.Add(this.gridCourse);
             this.groupBox1.Location = new System.Drawing.Point(12, 66);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(784, 419);
+            this.groupBox1.Size = new System.Drawing.Size(790, 403);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "可选开课列表";
@@ -155,6 +169,84 @@ namespace Curriculam
             this.课程名DataGridViewTextBoxColumn.ReadOnly = true;
             this.课程名DataGridViewTextBoxColumn.Width = 125;
             // 
+            // gridAvailableCourse
+            // 
+            this.gridAvailableCourse.AllowUserToAddRows = false;
+            this.gridAvailableCourse.AllowUserToDeleteRows = false;
+            this.gridAvailableCourse.AutoGenerateColumns = false;
+            this.gridAvailableCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAvailableCourse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.开课编号DataGridViewTextBoxColumn,
+            this.课程名DataGridViewTextBoxColumn1,
+            this.主讲教师DataGridViewTextBoxColumn});
+            this.gridAvailableCourse.DataSource = this.availableCourseListBindingSource;
+            this.gridAvailableCourse.Location = new System.Drawing.Point(300, 24);
+            this.gridAvailableCourse.MultiSelect = false;
+            this.gridAvailableCourse.Name = "gridAvailableCourse";
+            this.gridAvailableCourse.ReadOnly = true;
+            this.gridAvailableCourse.RowHeadersVisible = false;
+            this.gridAvailableCourse.RowHeadersWidth = 51;
+            this.gridAvailableCourse.RowTemplate.Height = 27;
+            this.gridAvailableCourse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridAvailableCourse.Size = new System.Drawing.Size(478, 178);
+            this.gridAvailableCourse.TabIndex = 1;
+            // 
+            // campusDataSet1
+            // 
+            this.campusDataSet1.DataSetName = "campusDataSet";
+            this.campusDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // availableCourseListBindingSource
+            // 
+            this.availableCourseListBindingSource.DataMember = "AvailableCourseList";
+            this.availableCourseListBindingSource.DataSource = this.campusDataSet1;
+            // 
+            // availableCourseListTableAdapter
+            // 
+            this.availableCourseListTableAdapter.ClearBeforeFill = true;
+            // 
+            // 开课编号DataGridViewTextBoxColumn
+            // 
+            this.开课编号DataGridViewTextBoxColumn.DataPropertyName = "开课编号";
+            this.开课编号DataGridViewTextBoxColumn.HeaderText = "开课编号";
+            this.开课编号DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.开课编号DataGridViewTextBoxColumn.Name = "开课编号DataGridViewTextBoxColumn";
+            this.开课编号DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 课程名DataGridViewTextBoxColumn1
+            // 
+            this.课程名DataGridViewTextBoxColumn1.DataPropertyName = "课程名";
+            this.课程名DataGridViewTextBoxColumn1.HeaderText = "课程名";
+            this.课程名DataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.课程名DataGridViewTextBoxColumn1.Name = "课程名DataGridViewTextBoxColumn1";
+            this.课程名DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.课程名DataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // 主讲教师DataGridViewTextBoxColumn
+            // 
+            this.主讲教师DataGridViewTextBoxColumn.DataPropertyName = "主讲教师";
+            this.主讲教师DataGridViewTextBoxColumn.HeaderText = "主讲教师";
+            this.主讲教师DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.主讲教师DataGridViewTextBoxColumn.Name = "主讲教师DataGridViewTextBoxColumn";
+            this.主讲教师DataGridViewTextBoxColumn.ReadOnly = true;
+            this.主讲教师DataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gridLecture
+            // 
+            this.gridLecture.AllowUserToAddRows = false;
+            this.gridLecture.AllowUserToDeleteRows = false;
+            this.gridLecture.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLecture.Location = new System.Drawing.Point(300, 208);
+            this.gridLecture.MultiSelect = false;
+            this.gridLecture.Name = "gridLecture";
+            this.gridLecture.ReadOnly = true;
+            this.gridLecture.RowHeadersVisible = false;
+            this.gridLecture.RowHeadersWidth = 51;
+            this.gridLecture.RowTemplate.Height = 27;
+            this.gridLecture.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridLecture.Size = new System.Drawing.Size(478, 184);
+            this.gridLecture.TabIndex = 1;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -172,6 +264,10 @@ namespace Curriculam
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campusDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAvailableCourse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.campusDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.availableCourseListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLecture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +287,14 @@ namespace Curriculam
         private System.Windows.Forms.BindingSource campusDataSetBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView gridAvailableCourse;
+        private campusDataSet campusDataSet1;
+        private System.Windows.Forms.BindingSource availableCourseListBindingSource;
+        private campusDataSetTableAdapters.AvailableCourseListTableAdapter availableCourseListTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 开课编号DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 课程名DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 主讲教师DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView gridLecture;
     }
 }
 

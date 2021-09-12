@@ -352,7 +352,7 @@ SELECT StaffID, TeacherName FROM Teacher WHERE (StaffID = @StaffID)</CommandText
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AvailableCourseLsitTableAdapter" GeneratorDataComponentClassName="AvailableCourseLsitTableAdapter" Name="AvailableCourseLsit" UserDataComponentName="AvailableCourseLsitTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AvailableCourseListTableAdapter" GeneratorDataComponentClassName="AvailableCourseListTableAdapter" Name="AvailableCourseList" UserDataComponentName="AvailableCourseListTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="campusConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
@@ -476,7 +476,7 @@ FROM      AvailableCourse INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AvailableCourseLsit" msprop:Generator_TableClassName="AvailableCourseLsitDataTable" msprop:Generator_TableVarName="tableAvailableCourseLsit" msprop:Generator_TablePropName="AvailableCourseLsit" msprop:Generator_RowDeletingName="AvailableCourseLsitRowDeleting" msprop:Generator_RowChangingName="AvailableCourseLsitRowChanging" msprop:Generator_RowEvHandlerName="AvailableCourseLsitRowChangeEventHandler" msprop:Generator_RowDeletedName="AvailableCourseLsitRowDeleted" msprop:Generator_UserTableName="AvailableCourseLsit" msprop:Generator_RowChangedName="AvailableCourseLsitRowChanged" msprop:Generator_RowEvArgName="AvailableCourseLsitRowChangeEvent" msprop:Generator_RowClassName="AvailableCourseLsitRow">
+        <xs:element name="AvailableCourseList" msprop:Generator_TableClassName="AvailableCourseListDataTable" msprop:Generator_TableVarName="tableAvailableCourseList" msprop:Generator_TablePropName="AvailableCourseList" msprop:Generator_RowDeletingName="AvailableCourseListRowDeleting" msprop:Generator_RowChangingName="AvailableCourseListRowChanging" msprop:Generator_RowEvHandlerName="AvailableCourseListRowChangeEventHandler" msprop:Generator_RowDeletedName="AvailableCourseListRowDeleted" msprop:Generator_UserTableName="AvailableCourseList" msprop:Generator_RowChangedName="AvailableCourseListRowChanged" msprop:Generator_RowEvArgName="AvailableCourseListRowChangeEvent" msprop:Generator_RowClassName="AvailableCourseListRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="开课编号" msprop:Generator_ColumnVarNameInTable="column开课编号" msprop:Generator_ColumnPropNameInRow="开课编号" msprop:Generator_ColumnPropNameInTable="开课编号Column" msprop:Generator_UserColumnName="开课编号" type="xs:int" />
@@ -525,8 +525,8 @@ FROM      AvailableCourse INNER JOIN
       <xs:selector xpath=".//mstns:Teacher" />
       <xs:field xpath="mstns:StaffID" />
     </xs:unique>
-    <xs:unique name="AvailableCourseLsit_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:AvailableCourseLsit" />
+    <xs:unique name="AvailableCourseList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AvailableCourseList" />
       <xs:field xpath="mstns:开课编号" />
     </xs:unique>
   </xs:element>
